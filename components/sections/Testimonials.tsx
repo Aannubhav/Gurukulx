@@ -58,7 +58,7 @@ export default function Testimonials() {
           eyebrow="Social Proof"
           title="What Our"
           titleHighlight="Customers Say"
-          subtitle="Don't take our word for it. Here's what teams building with NexStack have to say."
+          subtitle="Don't take our word for it. Here's what institute founders and EdTech builders say about GurukulamX."
           className="mb-16"
         />
 

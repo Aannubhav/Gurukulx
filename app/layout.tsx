@@ -17,13 +17,13 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "NexStack — Your Complete Digital Product Suite",
+  title: "GurukulamX — Launch Your EdTech Platform in Weeks",
   description:
-    "Web, Android, and iOS — unified under one platform. Ship faster, scale smarter, and deliver exceptional user experiences across every device.",
-  keywords: ["B2B SaaS", "web application", "Android app", "iOS app", "digital platform"],
+    "Full LMS, mobile apps, AI learning engine, and white-label branding — all under your brand. Three licensing models designed for every stage of growth.",
+  keywords: ["EdTech SaaS", "LMS platform", "white-label LMS", "coaching institute software", "MCQ automation", "online teaching platform India"],
   openGraph: {
-    title: "NexStack — Your Complete Digital Product Suite",
-    description: "Ship faster, scale smarter across web, Android, and iOS.",
+    title: "GurukulamX — Launch Your EdTech Platform in Weeks",
+    description: "Full LMS + AI + mobile apps. Launch, teach, and scale — under your brand.",
     type: "website",
   },
 };

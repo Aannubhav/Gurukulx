@@ -4,10 +4,10 @@ import { Zap, X, Globe, Mail } from "lucide-react";
 import { COMPANY_NAME } from "@/lib/constants";
 
 const footerLinks = {
-  Products: ["Web Application", "Android App", "iOS App", "API Access", "Integrations"],
-  Resources: ["Documentation", "API Reference", "Blog", "Changelog", "Status Page"],
-  Company: ["About Us", "Careers", "Press Kit", "Partners", "Contact"],
-  Legal: ["Privacy Policy", "Terms of Service", "Cookie Policy", "Security", "GDPR"],
+  Platform: ["Full LMS Portal", "Android App", "iOS App", "AI Learning Engine", "White-label Branding"],
+  Resources: ["Documentation", "Feature Roadmap", "Blog", "Case Studies", "Status Page"],
+  Company: ["About Us", "Our Team", "Careers", "Partners", "Contact"],
+  Legal: ["Privacy Policy", "Terms of Service", "Refund Policy", "Security", "Data Policy"],
 };
 
 const socialLinks = [
@@ -36,7 +36,7 @@ export default function Footer() {
               </span>
             </a>
             <p className="text-sm text-[#9A8E7F] leading-relaxed max-w-xs mb-6">
-              The complete digital product suite for teams that ship fast and scale smart.
+              Full LMS, mobile apps, and AI learning engine — all under your brand. Built for India's coaching institutes and EdTech startups.
             </p>
 
             {/* Social */}
@@ -59,7 +59,7 @@ export default function Footer() {
               <form className="flex gap-2" onSubmit={(e) => e.preventDefault()}>
                 <input
                   type="email"
-                  placeholder="you@company.com"
+                  placeholder="you@institute.com"
                   className="flex-1 min-w-0 bg-[rgba(255,140,33,0.04)] border border-[rgba(255,140,33,0.1)] rounded-lg px-3 py-2 text-sm text-[#F5F0E8] placeholder-[#9A8E7F]/60 focus:outline-none focus:border-[rgba(255,140,33,0.4)] transition-colors"
                 />
                 <button
@@ -102,7 +102,7 @@ export default function Footer() {
             © {new Date().getFullYear()} {COMPANY_NAME}, Inc. All rights reserved.
           </p>
           <p className="text-xs text-[#9A8E7F]/50">
-            Built with ♥ for teams that ship
+            Built with ♥ for India&apos;s EdTech builders
           </p>
         </div>
       </div>

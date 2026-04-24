@@ -145,17 +145,16 @@ export default function CTASection() {
             transition={{ duration: 0.7 }}
           >
             <p className="text-xs font-semibold tracking-[0.2em] uppercase text-[#FF8C21] mb-5">
-              Get Started Today
+              Launch in Weeks
             </p>
 
             <h2 className="font-[family-name:var(--font-syne)] text-4xl sm:text-5xl lg:text-6xl font-bold text-[#F5F0E8] leading-[1.1] mb-6">
-              Ready to Transform Your{" "}
-              <span className="text-gradient">Digital Presence?</span>
+              Your EdTech Platform.{" "}
+              <span className="text-gradient">Ready to Go Live.</span>
             </h2>
 
             <p className="text-lg text-[#9A8E7F] leading-relaxed mb-10 max-w-2xl mx-auto">
-              Join 500+ companies already shipping faster, scaling smarter, and
-              delivering extraordinary digital experiences with NexStack.
+              Join 200+ institutes and coaching centres already teaching, scaling, and earning under their own brand — powered by GurukulamX.
             </p>
 
             {/* Email form */}
@@ -174,7 +173,7 @@ export default function CTASection() {
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    placeholder="you@company.com"
+                    placeholder="you@institute.com"
                     required
                     className="w-full bg-[rgba(255,140,33,0.06)] border border-[rgba(255,140,33,0.15)] rounded-xl pl-10 pr-4 py-3.5 text-sm text-[#F5F0E8] placeholder-[#9A8E7F]/60 focus:outline-none focus:border-[rgba(255,140,33,0.45)] focus:bg-[rgba(255,140,33,0.09)] transition-all"
                   />
@@ -200,16 +199,16 @@ export default function CTASection() {
             {/* Alternative CTAs */}
             <div className="flex flex-wrap items-center justify-center gap-4">
               <Button variant="primary" size="lg" glow>
-                Start Free Trial
+                Book a Free Demo
                 <ArrowRight size={18} />
               </Button>
               <Button variant="outline" size="lg">
-                Talk to Sales
+                See Pricing Plans
               </Button>
             </div>
 
             <p className="text-xs text-[#9A8E7F]/60 mt-6">
-              14-day free trial · No credit card required · Cancel anytime
+              No upfront commitment · Launch in 3 weeks · Full white-label branding
             </p>
           </motion.div>
         </div>

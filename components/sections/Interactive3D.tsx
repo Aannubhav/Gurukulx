@@ -12,40 +12,40 @@ import { useIsMobile } from "@/hooks/useMediaQuery";
 const products = [
   {
     id: "web",
-    name: "Web Application",
-    tagline: "Responsive Dashboard",
+    name: "Full LMS Portal",
+    tagline: "White-label Web Platform",
     description:
-      "A powerful web platform with real-time data, custom workflows, and deep integrations. Works beautifully on every browser and screen size.",
+      "A complete learning management system on your own domain — live classes, recorded content, test series, fee collection, analytics, and more. Zero coding required.",
     icon: Monitor,
     stats: [
-      { value: "10ms", label: "Response time" },
-      { value: "99.99%", label: "Uptime" },
-      { value: "200+", label: "Integrations" },
+      { value: "99.9%", label: "Uptime SLA" },
+      { value: "3 wks", label: "Avg launch" },
+      { value: "50+", label: "LMS modules" },
     ],
   },
   {
     id: "android",
-    name: "Android App",
-    tagline: "Native Performance",
+    name: "Android Learning App",
+    tagline: "Your Brand on Play Store",
     description:
-      "Material Design 3 with push notifications, biometric auth, and offline-first architecture. Reaches billions of Android users effortlessly.",
+      "Native Android app published under your institute's name. Push notifications, offline downloads, live class access, and in-app payments — all branded to you.",
     icon: Smartphone,
     stats: [
-      { value: "4.9★", label: "Play Store" },
+      { value: "4.8★", label: "Avg rating" },
       { value: "60fps", label: "UI smoothness" },
-      { value: "<1s", label: "Launch time" },
+      { value: "Offline", label: "Video support" },
     ],
   },
   {
     id: "ios",
-    name: "iOS App",
-    tagline: "Apple-Grade Experience",
+    name: "iOS Learning App",
+    tagline: "Your Brand on App Store",
     description:
-      "Native SwiftUI performance with Apple Pay, Siri shortcuts, and widget support. Built to meet Apple's highest design standards.",
+      "Premium iOS experience under your institute's App Store listing. Apple Pay for fees, Siri shortcuts for schedules, and a polished UI your students will love.",
     icon: Tablet,
     stats: [
-      { value: "5★", label: "App Store" },
-      { value: "120fps", label: "ProMotion" },
+      { value: "4.9★", label: "App Store" },
+      { value: "Face ID", label: "Auth support" },
       { value: "A+", label: "Apple audit" },
     ],
   },
@@ -65,9 +65,9 @@ export default function Interactive3D() {
       <div className="container-custom">
         <SectionHeading
           eyebrow="Interactive"
-          title="Explore Every"
-          titleHighlight="Platform"
-          subtitle="Click any product to bring it into focus. Drag to rotate. Experience the suite in 3D."
+          title="Your Institute."
+          titleHighlight="Every Screen."
+          subtitle="Click any platform to explore it. Drag to rotate. See exactly what your students will experience."
           className="mb-12"
         />
 

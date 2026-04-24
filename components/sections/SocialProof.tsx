@@ -14,7 +14,7 @@ export default function SocialProof() {
           transition={{ duration: 0.5 }}
           className="text-xs font-semibold tracking-[0.2em] uppercase text-[#9A8E7F]"
         >
-          Trusted by <span className="text-[#FF8C21]">500+</span> companies worldwide
+          Powering <span className="text-[#FF8C21]">200+</span> institutes, coaching centres & EdTech startups
         </motion.p>
       </div>
 
@@ -73,10 +73,10 @@ export default function SocialProof() {
           className="grid grid-cols-2 md:grid-cols-4 gap-8"
         >
           {[
-            { value: "500+", label: "Companies" },
-            { value: "2M+", label: "End users" },
-            { value: "99.99%", label: "Uptime" },
-            { value: "<50ms", label: "Avg. response" },
+            { value: "200+", label: "Institutes live" },
+            { value: "5L+", label: "Students served" },
+            { value: "3 weeks", label: "Avg. launch time" },
+            { value: "99.9%", label: "Platform uptime" },
           ].map(({ value, label }, i) => (
             <motion.div
               key={label}

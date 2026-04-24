@@ -1,61 +1,62 @@
-export const COMPANY_NAME = "NexStack";
-export const COMPANY_TAGLINE = "Your Complete Digital Product Suite";
+export const COMPANY_NAME = "GurukulamX";
+export const COMPANY_FULL = "GurukulamX — Nexus Micro Technologies";
+export const COMPANY_TAGLINE = "Launch. Teach. Scale.";
 
 export const NAV_LINKS = [
-  { label: "Products", href: "#products" },
+  { label: "Platform", href: "#products" },
   { label: "Features", href: "#features" },
   { label: "Pricing", href: "#pricing" },
-  { label: "About", href: "#about" },
+  { label: "Compare", href: "#pricing" },
   { label: "Contact", href: "#contact" },
 ];
 
 export const TRUSTED_COMPANIES = [
-  "Vercel", "Stripe", "Notion", "Linear", "Figma",
-  "Loom", "Retool", "Segment", "Amplitude", "Mixpanel",
-  "Vercel", "Stripe", "Notion", "Linear", "Figma",
-  "Loom", "Retool", "Segment", "Amplitude", "Mixpanel",
+  "Byju's", "Unacademy", "PhysicsWallah", "Vedantu", "Testbook",
+  "PrepLadder", "Skill India", "NIIT", "Simplilearn", "UpGrad",
+  "Byju's", "Unacademy", "PhysicsWallah", "Vedantu", "Testbook",
+  "PrepLadder", "Skill India", "NIIT", "Simplilearn", "UpGrad",
 ];
 
 export const PRODUCTS = [
   {
     id: "web",
-    name: "Web Application",
-    tagline: "Build for the browser, built to scale.",
+    name: "Full LMS Platform",
+    tagline: "Everything to run your ed-tech business.",
     description:
-      "A fully-featured web platform with real-time analytics, custom workflows, and API integrations. Deploy in minutes, scale infinitely.",
+      "A complete web-based learning management system — course builder, student dashboard, live classes, assessments, and deep analytics. White-label ready from day one.",
     features: [
-      { icon: "LayoutDashboard", text: "Responsive Dashboard" },
-      { icon: "BarChart3", text: "Real-time Analytics" },
-      { icon: "GitBranch", text: "Custom Workflows" },
-      { icon: "Plug", text: "API Integrations" },
+      { icon: "LayoutDashboard", text: "Course & Batch Builder" },
+      { icon: "BarChart3", text: "Revenue Analytics" },
+      { icon: "GitBranch", text: "Adaptive Learning Paths" },
+      { icon: "Plug", text: "Payment Gateway Integration" },
     ],
     color: "#FF8C21",
   },
   {
     id: "android",
-    name: "Android Application",
-    tagline: "Native performance, delivered fast.",
+    name: "Mobile Learning App",
+    tagline: "Your brand. On every device.",
     description:
-      "Reach billions of Android users with push notifications, offline mode, and biometric security baked in from day one.",
+      "Fully white-labeled iOS and Android apps delivered under your brand. Students get offline downloads, push notifications, and a native learning experience — all yours.",
     features: [
       { icon: "Bell", text: "Push Notifications" },
-      { icon: "WifiOff", text: "Offline Mode" },
-      { icon: "Palette", text: "Material Design" },
-      { icon: "Fingerprint", text: "Biometric Auth" },
+      { icon: "WifiOff", text: "Offline Downloads" },
+      { icon: "Palette", text: "Full White-label" },
+      { icon: "Fingerprint", text: "Biometric Login" },
     ],
     color: "#FF8C21",
   },
   {
     id: "ios",
-    name: "iOS Application",
-    tagline: "Premium experience for Apple users.",
+    name: "AI Learning Engine",
+    tagline: "Intelligence built into every lesson.",
     description:
-      "Native iOS performance with Apple Pay, widget support, and Siri shortcuts. The smoothest app your users have ever touched.",
+      "Adaptive MCQ automation, AI-driven recommendations, performance prediction, and personalised revision plans. Your platform gets smarter as your students learn more.",
     features: [
-      { icon: "Zap", text: "Native Performance" },
-      { icon: "CreditCard", text: "Apple Pay" },
-      { icon: "Layers", text: "Widget Support" },
-      { icon: "Mic", text: "Siri Shortcuts" },
+      { icon: "Zap", text: "MCQ Auto-generation" },
+      { icon: "CreditCard", text: "Performance Prediction" },
+      { icon: "Layers", text: "Adaptive Revision Plans" },
+      { icon: "Mic", text: "AI Doubt Resolution" },
     ],
     color: "#FF8C21",
   },
@@ -63,143 +64,185 @@ export const PRODUCTS = [
 
 export const FEATURES = [
   {
-    icon: "Shield",
-    title: "Enterprise Security",
-    description: "SOC 2 compliant with end-to-end encryption and role-based access control.",
+    icon: "BookOpen",
+    title: "Course & Batch Builder",
+    description: "Build unlimited courses, live batches, and recorded content with a drag-and-drop editor in minutes.",
     highlight: true,
   },
   {
-    icon: "Zap",
-    title: "Blazing Fast",
-    description: "Sub-100ms response times globally with edge-optimized CDN delivery.",
-  },
-  {
-    icon: "Globe",
-    title: "Global Scale",
-    description: "Auto-scaling infrastructure that handles millions of concurrent users.",
+    icon: "Brain",
+    title: "MCQ Automation Engine",
+    description: "Auto-generate, shuffle, and evaluate MCQs with AI. Reduce manual test-paper effort by 90%.",
     highlight: true,
-  },
-  {
-    icon: "Code2",
-    title: "Developer First",
-    description: "Comprehensive REST and GraphQL APIs with SDKs in 12+ languages.",
   },
   {
     icon: "BarChart3",
-    title: "Deep Analytics",
-    description: "Real-time dashboards, custom reports, and AI-powered insights.",
+    title: "Revenue Analytics",
+    description: "Real-time GMV, enrollment funnels, drop-off tracking, and student LTV — all in one dashboard.",
+  },
+  {
+    icon: "Palette",
+    title: "White-label Branding",
+    description: "Your logo, colors, domain, and app name. Students never see 'GurukulamX' — they see your brand.",
+  },
+  {
+    icon: "Zap",
+    title: "Adaptive Learning AI",
+    description: "AI that personalises every student's learning path based on performance and behavioral data.",
+  },
+  {
+    icon: "Shield",
+    title: "DRM Content Protection",
+    description: "Watermarking, screen-recording block, and encrypted streaming to protect your premium content.",
   },
   {
     icon: "Users",
-    title: "Team Collaboration",
-    description: "Built-in collaboration tools with comments, mentions, and activity feeds.",
+    title: "Student CRM",
+    description: "Full student lifecycle management — leads, onboarding, progress, renewals, and re-engagement.",
   },
   {
-    icon: "RefreshCw",
-    title: "Automated Backups",
-    description: "Continuous backups with one-click restore and 99.99% uptime SLA.",
-  },
-  {
-    icon: "Puzzle",
-    title: "200+ Integrations",
-    description: "Connects to Slack, Salesforce, HubSpot, and 200+ tools out of the box.",
+    icon: "Globe",
+    title: "Multi-language Support",
+    description: "Serve students in Hindi, Tamil, Telugu, Kannada, and 10+ regional languages out of the box.",
   },
 ];
 
+// Pricing uses INR and a hybrid billing model (not simple monthly/annual)
 export const PRICING_PLANS = [
   {
+    id: "starter",
     name: "Starter",
-    monthlyPrice: 49,
-    annualPrice: 39,
-    description: "Perfect for small teams getting started.",
-    features: [
-      "Up to 5 users",
-      "Web Application",
-      "10K API calls / month",
-      "Basic analytics",
-      "Email support",
-      "99.9% uptime SLA",
+    badge: null,
+    tagline: "Start with zero upfront risk.",
+    annualFee: 20000,
+    revenueShare: 8,
+    revenueShareBreakdown: [
+      { label: "Payment & Infra handling", pct: 2 },
+      { label: "GurukulamX platform margin", pct: 6 },
     ],
-    cta: "Get Started Free",
+    oneTime: false,
+    priceDisplay: "₹20,000 / year",
+    subDisplay: "+ 8% of GMV",
+    description:
+      "Pay a small annual fee and share 8% of every sale. We grow when you grow — perfect if you're just starting out.",
+    features: [
+      "Full LMS + mobile apps",
+      "AI & MCQ automation engine",
+      "White-label branding",
+      "Unlimited students",
+      "Payment gateway integration",
+      "12-month email support",
+      "Customisation @ ₹699/hr",
+    ],
+    cta: "Start for ₹20K/yr",
     highlighted: false,
+    insight: "Best when GMV < ₹25L/yr",
   },
   {
+    id: "professional",
     name: "Professional",
-    monthlyPrice: 149,
-    annualPrice: 119,
-    description: "For growing teams that need all three products.",
-    features: [
-      "Up to 25 users",
-      "Web + Android + iOS apps",
-      "500K API calls / month",
-      "Advanced analytics",
-      "Priority support",
-      "Custom integrations",
-      "99.95% uptime SLA",
-    ],
-    cta: "Start Free Trial",
-    highlighted: true,
     badge: "Most Popular",
+    tagline: "One payment. Zero revenue share. Forever.",
+    annualFee: 0,
+    revenueShare: 0,
+    oneTime: true,
+    priceDisplay: "₹2,00,000",
+    subDisplay: "One-time · No revenue share",
+    description:
+      "Buy out of the revenue share permanently. Predictable cost, full feature access, and no per-sale deduction ever again.",
+    features: [
+      "Everything in Starter",
+      "Zero revenue share — forever",
+      "No annual renewal fee",
+      "Priority support queue",
+      "Advanced analytics suite",
+      "Custom domain + SSL",
+      "Customisation @ ₹699/hr",
+    ],
+    cta: "Buy Now — ₹2L",
+    highlighted: true,
+    insight: "Pays back vs Starter at ~₹25–30L GMV/yr",
   },
   {
+    id: "enterprise",
     name: "Enterprise",
-    monthlyPrice: 399,
-    annualPrice: 319,
-    description: "Full power for large organizations.",
+    badge: null,
+    tagline: "Full source code. Total independence.",
+    annualFee: 0,
+    revenueShare: 0,
+    oneTime: true,
+    priceDisplay: "₹5,00,000",
+    subDisplay: "One-time · Includes source code",
+    description:
+      "Own the entire codebase. Modify, extend, and build your own product on top of it. From SaaS to product company in one step.",
     features: [
-      "Unlimited users",
-      "All products + white-label",
-      "Unlimited API calls",
-      "Custom analytics + BI",
-      "Dedicated support",
-      "SSO + SAML",
-      "99.99% uptime SLA",
-      "Custom SLA",
+      "Everything in Professional",
+      "Full source code ownership",
+      "Deploy on your own servers",
+      "Modify & extend freely",
+      "Build your own product on top",
+      "Tech transfer + documentation",
+      "Customisation @ ₹599/hr",
     ],
-    cta: "Talk to Sales",
+    cta: "Talk to Us — ₹5L",
     highlighted: false,
+    insight: "For large institutes, corporates & funded startups",
   },
 ];
 
 export const TESTIMONIALS = [
   {
     quote:
-      "NexStack cut our go-to-market time by 60%. We launched on all three platforms in 8 weeks instead of 6 months.",
-    author: "Sarah Chen",
+      "We launched our coaching institute's platform in 3 weeks on the Starter plan. Once our GMV crossed ₹30L, switching to Professional was a no-brainer.",
+    author: "Rajiv Sharma",
+    title: "Founder",
+    company: "ClearIAS Academy",
+    avatar: "RS",
+  },
+  {
+    quote:
+      "The MCQ automation engine alone saves us 40 hours a month. Our teachers focus on teaching — GurukulamX handles the rest.",
+    author: "Priya Menon",
+    title: "Head of Academics",
+    company: "MathPro Coaching",
+    avatar: "PM",
+  },
+  {
+    quote:
+      "We took the Enterprise plan and built our own product on top of the source code. GurukulamX's tech became our competitive moat.",
+    author: "Ankit Gupta",
     title: "CTO",
-    company: "Foundry Labs",
-    avatar: "SC",
+    company: "EduVerse Technologies",
+    avatar: "AG",
   },
   {
     quote:
-      "The analytics alone are worth the price. We finally understand how users move through our product.",
-    author: "Marcus Rivera",
-    title: "Head of Product",
-    company: "Axiom Data",
-    avatar: "MR",
+      "White-labeling was seamless — students think it's fully our product. Brand equity stayed with us from day one.",
+    author: "Sunita Rao",
+    title: "Director",
+    company: "Shiksha Pro Institute",
+    avatar: "SR",
   },
   {
     quote:
-      "Best decision we made was consolidating our three separate dev teams onto NexStack. The API consistency is incredible.",
-    author: "Priya Nair",
-    title: "VP Engineering",
-    company: "Orbis Finance",
-    avatar: "PN",
-  },
-  {
-    quote:
-      "Our mobile retention went up 40% after switching to NexStack's iOS app framework. The native performance is unmatched.",
-    author: "James Whitmore",
+      "Revenue analytics changed how we run our business. We can see exactly where students drop off and fix it immediately.",
+    author: "Vikram Nair",
     title: "CEO",
-    company: "Pulse Metrics",
-    avatar: "JW",
-  },
-  {
-    quote:
-      "Customer support is extraordinary. Issues resolved in minutes, not days. The team genuinely cares.",
-    author: "Aiko Tanaka",
-    title: "Director of Operations",
-    company: "Shibuya Systems",
-    avatar: "AT",
+    company: "Catalyst Learning",
+    avatar: "VN",
   },
 ];
+
+export const COST_STRUCTURE = [
+  { item: "Hosting / Server", range: "₹5,000 – ₹20,000 / month", bearer: "Client" },
+  { item: "Domain + CDN", range: "₹500 – ₹2,000 / month", bearer: "Client" },
+  { item: "SMS / Email", range: "₹500 – ₹3,000 / month", bearer: "Client" },
+  { item: "Platform development", range: "Covered by GurukulamX", bearer: "Nexus" },
+  { item: "Feature updates", range: "Covered by GurukulamX", bearer: "Nexus" },
+];
+
+export const GMV_BREAKEVEN = {
+  crossoverGMV: 2500000, // ₹25L
+  starterAnnualAt25L: 220000, // ₹20K + 8% of ₹25L
+  professionalCost: 200000,
+};

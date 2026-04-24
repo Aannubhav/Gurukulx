@@ -3,8 +3,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import {
-  Shield, Zap, Globe, Code2, BarChart3,
-  Users, RefreshCw, Puzzle,
+  Shield, Zap, Globe, BarChart3,
+  Users, Palette, BookOpen, Brain,
   type LucideProps,
 } from "lucide-react";
 import SectionHeading from "@/components/ui/SectionHeading";
@@ -16,11 +16,11 @@ const iconMap: Record<string, LucideIcon> = {
   Shield: Shield as LucideIcon,
   Zap: Zap as LucideIcon,
   Globe: Globe as LucideIcon,
-  Code2: Code2 as LucideIcon,
   BarChart3: BarChart3 as LucideIcon,
   Users: Users as LucideIcon,
-  RefreshCw: RefreshCw as LucideIcon,
-  Puzzle: Puzzle as LucideIcon,
+  Palette: Palette as LucideIcon,
+  BookOpen: BookOpen as LucideIcon,
+  Brain: Brain as LucideIcon,
 };
 
 export default function Features() {

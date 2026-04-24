@@ -191,10 +191,10 @@ export default function Products() {
 
       <div className="container-custom">
         <SectionHeading
-          eyebrow="Our Products"
-          title="Everything in"
-          titleHighlight="One Platform"
-          subtitle="Stop juggling separate tools for each platform. NexStack gives you a unified suite that works beautifully across web, Android, and iOS."
+          eyebrow="Our Platform"
+          title="LMS. Mobile. AI."
+          titleHighlight="All Under Your Brand."
+          subtitle="One platform to launch your institute's full digital presence — customised with your logo, colours, and domain. No vendor lock-in, no generic software."
           className="mb-20"
         />
 

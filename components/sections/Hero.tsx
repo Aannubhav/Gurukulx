@@ -74,7 +74,7 @@ export default function Hero() {
           <motion.div variants={itemVariants}>
             <Badge>
               <span className="w-1.5 h-1.5 rounded-full bg-[#FF8C21] animate-pulse-glow inline-block" />
-              Built for Scale
+              EdTech SaaS Platform
             </Badge>
           </motion.div>
 
@@ -82,25 +82,24 @@ export default function Hero() {
             variants={itemVariants}
             className="font-[family-name:var(--font-syne)] text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.05] text-[#F5F0E8]"
           >
-            Your Complete{" "}
+            Launch. Teach.{" "}
             <span className="block">
-              <span className="text-gradient">Digital</span>
+              <span className="text-gradient">Scale.</span>
             </span>
-            <span className="block">Product Suite</span>
+            <span className="block text-4xl sm:text-5xl lg:text-6xl mt-1">Under Your Brand.</span>
           </motion.h1>
 
           <motion.p
             variants={itemVariants}
             className="text-lg text-[#9A8E7F] max-w-lg leading-relaxed"
           >
-            Web, Android, and iOS — unified under one platform. Ship faster,
-            scale smarter, and deliver exceptional user experiences across every
-            device.
+            Full LMS, white-label mobile apps, and an AI learning engine — ready in weeks.
+            Three licensing models built for every stage of your EdTech journey.
           </motion.p>
 
           <motion.div variants={itemVariants} className="flex flex-wrap gap-4">
             <Button size="lg" glow>
-              Start Free Trial
+              See Pricing
               <ArrowRight size={18} />
             </Button>
             <Button variant="outline" size="lg">
@@ -115,7 +114,7 @@ export default function Hero() {
             className="flex items-center gap-4 pt-2"
           >
             <div className="flex -space-x-2">
-              {["SC", "MR", "PN", "JW"].map((initials, i) => (
+              {["RS", "PM", "AG", "SR"].map((initials, i) => (
                 <div
                   key={initials}
                   className="w-8 h-8 rounded-full border-2 border-[#08080C] flex items-center justify-center text-[10px] font-bold text-[#FF8C21]"
@@ -129,8 +128,8 @@ export default function Hero() {
               ))}
             </div>
             <p className="text-sm text-[#9A8E7F]">
-              <span className="text-[#F5F0E8] font-semibold">500+</span> teams
-              already shipping
+              <span className="text-[#F5F0E8] font-semibold">200+</span> institutes
+              already live
             </p>
           </motion.div>
         </motion.div>
