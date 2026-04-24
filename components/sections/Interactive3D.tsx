@@ -1,0 +1,204 @@
+"use client";
+
+import { Suspense, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Canvas } from "@react-three/fiber";
+import { EffectComposer, Bloom } from "@react-three/postprocessing";
+import { Monitor, Smartphone, Tablet } from "lucide-react";
+import SectionHeading from "@/components/ui/SectionHeading";
+import InteractiveShowcaseScene from "@/components/three/InteractiveShowcase";
+import { useIsMobile } from "@/hooks/useMediaQuery";
+
+const products = [
+  {
+    id: "web",
+    name: "Web Application",
+    tagline: "Responsive Dashboard",
+    description:
+      "A powerful web platform with real-time data, custom workflows, and deep integrations. Works beautifully on every browser and screen size.",
+    icon: Monitor,
+    stats: [
+      { value: "10ms", label: "Response time" },
+      { value: "99.99%", label: "Uptime" },
+      { value: "200+", label: "Integrations" },
+    ],
+  },
+  {
+    id: "android",
+    name: "Android App",
+    tagline: "Native Performance",
+    description:
+      "Material Design 3 with push notifications, biometric auth, and offline-first architecture. Reaches billions of Android users effortlessly.",
+    icon: Smartphone,
+    stats: [
+      { value: "4.9★", label: "Play Store" },
+      { value: "60fps", label: "UI smoothness" },
+      { value: "<1s", label: "Launch time" },
+    ],
+  },
+  {
+    id: "ios",
+    name: "iOS App",
+    tagline: "Apple-Grade Experience",
+    description:
+      "Native SwiftUI performance with Apple Pay, Siri shortcuts, and widget support. Built to meet Apple's highest design standards.",
+    icon: Tablet,
+    stats: [
+      { value: "5★", label: "App Store" },
+      { value: "120fps", label: "ProMotion" },
+      { value: "A+", label: "Apple audit" },
+    ],
+  },
+];
+
+export default function Interactive3D() {
+  const [selected, setSelected] = useState(1);
+  const isMobile = useIsMobile();
+  const currentProduct = products[selected];
+
+  return (
+    <section className="section-padding relative overflow-hidden bg-[#0F0E13]">
+      {/* Top and bottom dividers */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[rgba(255,140,33,0.2)] to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[rgba(255,140,33,0.2)] to-transparent" />
+
+      <div className="container-custom">
+        <SectionHeading
+          eyebrow="Interactive"
+          title="Explore Every"
+          titleHighlight="Platform"
+          subtitle="Click any product to bring it into focus. Drag to rotate. Experience the suite in 3D."
+          className="mb-12"
+        />
+
+        <div className="relative rounded-3xl overflow-hidden border border-[rgba(255,140,33,0.1)]"
+          style={{
+            background: "rgba(8, 8, 12, 0.8)",
+            boxShadow: "0 0 80px rgba(255,140,33,0.06) inset",
+          }}
+        >
+          {/* 3D Canvas */}
+          <div className="w-full h-[55vh] min-h-[380px]" aria-label="Interactive 3D product showcase">
+            {!isMobile ? (
+              <Canvas
+                camera={{ position: [0, 1.5, 7], fov: 45 }}
+                dpr={[1, 2]}
+                gl={{ antialias: true, alpha: true }}
+                style={{ background: "transparent" }}
+              >
+                <Suspense fallback={null}>
+                  <InteractiveShowcaseScene selected={selected} onSelect={setSelected} />
+                  <EffectComposer>
+                    <Bloom
+                      intensity={2.0}
+                      luminanceThreshold={0.5}
+                      luminanceSmoothing={0.025}
+                      mipmapBlur
+                    />
+                  </EffectComposer>
+                </Suspense>
+              </Canvas>
+            ) : (
+              <div className="w-full h-full flex items-center justify-center gap-6">
+                {products.map((p, i) => (
+                  <button
+                    key={p.id}
+                    onClick={() => setSelected(i)}
+                    className={`relative w-20 h-32 rounded-2xl border transition-all duration-300 ${
+                      selected === i
+                        ? "border-[#FF8C21] shadow-[0_0_30px_rgba(255,140,33,0.4)] scale-110 bg-[rgba(255,140,33,0.15)]"
+                        : "border-[rgba(255,140,33,0.15)] bg-[rgba(255,140,33,0.04)]"
+                    }`}
+                  >
+                    <div className="absolute inset-2 rounded-xl bg-[#FF8C21]/20 border border-[#FF8C21]/40" />
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
+
+          {/* Product selector buttons */}
+          <div className="border-t border-[rgba(255,140,33,0.08)] flex flex-col sm:flex-row">
+            {products.map((product, i) => {
+              const Icon = product.icon;
+              const isActive = selected === i;
+
+              return (
+                <button
+                  key={product.id}
+                  onClick={() => setSelected(i)}
+                  className={`flex-1 flex items-center gap-3 px-6 py-4 transition-all duration-300 text-left ${
+                    isActive
+                      ? "bg-[rgba(255,140,33,0.08)] border-t-2 border-t-[#FF8C21] sm:border-t-0 sm:border-l-2 sm:border-l-[#FF8C21]"
+                      : "hover:bg-[rgba(255,140,33,0.04)] border-t-2 border-t-transparent sm:border-t-0 sm:border-l-2 sm:border-l-transparent"
+                  }`}
+                >
+                  <div
+                    className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 transition-colors ${
+                      isActive ? "bg-[#FF8C21]" : "bg-[rgba(255,140,33,0.1)]"
+                    }`}
+                  >
+                    <Icon
+                      size={15}
+                      className={isActive ? "text-[#08080C]" : "text-[#FF8C21]"}
+                    />
+                  </div>
+                  <div>
+                    <p
+                      className={`text-sm font-semibold ${
+                        isActive ? "text-[#F5F0E8]" : "text-[#9A8E7F]"
+                      }`}
+                    >
+                      {product.name}
+                    </p>
+                    <p className="text-xs text-[#9A8E7F]/60">{product.tagline}</p>
+                  </div>
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Product info overlay */}
+          <div className="border-t border-[rgba(255,140,33,0.08)] p-6 sm:p-8">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={selected}
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -12 }}
+                transition={{ duration: 0.35 }}
+                className="flex flex-col sm:flex-row sm:items-center gap-6 sm:gap-12"
+              >
+                <div className="flex-1">
+                  <h3 className="font-[family-name:var(--font-syne)] text-xl font-bold text-[#F5F0E8] mb-2">
+                    {currentProduct.name}
+                  </h3>
+                  <p className="text-sm text-[#9A8E7F] leading-relaxed max-w-lg">
+                    {currentProduct.description}
+                  </p>
+                </div>
+                <div className="flex gap-8 shrink-0">
+                  {currentProduct.stats.map((stat) => (
+                    <div key={stat.label} className="text-center">
+                      <p className="font-[family-name:var(--font-syne)] text-2xl font-bold text-gradient">
+                        {stat.value}
+                      </p>
+                      <p className="text-xs text-[#9A8E7F] mt-0.5">{stat.label}</p>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+            </AnimatePresence>
+          </div>
+        </div>
+
+        {/* Hint */}
+        {!isMobile && (
+          <p className="text-center text-xs text-[#9A8E7F]/50 mt-4 tracking-wider">
+            Click a product · Drag to rotate
+          </p>
+        )}
+      </div>
+    </section>
+  );
+}
