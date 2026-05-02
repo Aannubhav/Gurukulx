@@ -136,7 +136,7 @@ export default function Pricing() {
           ))}
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
           {PRICING_PLANS.map((plan, i) => {
             const Icon = planIcons[i];
             const isHighlight = plan.highlighted;
@@ -144,18 +144,19 @@ export default function Pricing() {
             return (
               <motion.div
                 key={plan.id}
-                initial={{ opacity: 0, y: 40, scale: 0.96 }}
-                whileInView={{ opacity: 1, y: 0, scale: isHighlight ? 1.03 : 1 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.65, delay: i * 0.12 }}
-                className={`relative rounded-2xl p-7 flex flex-col transition-all duration-300 ${
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.15 }}
+                transition={{ duration: 0.55, delay: i * 0.1 }}
+                className={`relative rounded-2xl flex flex-col transition-all duration-300 ${
                   isHighlight
-                    ? "border-2 border-[#FF6B00] bg-gradient-to-b from-[#FF6B00] to-[#FF8C21] shadow-[0_16px_60px_rgba(255,107,0,0.3)]"
+                    ? "border-2 border-[#FF6B00] bg-gradient-to-b from-[#FF6B00] to-[#FF8C21] shadow-[0_16px_60px_rgba(255,107,0,0.25)] md:-mt-4 md:-mb-4 z-10"
                     : "card-light"
                 }`}
               >
+                <div className={`p-7 flex flex-col flex-1 ${isHighlight ? "pt-10" : ""}`}>
                 {plan.badge && (
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2">
+                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 z-20 whitespace-nowrap">
                     <Badge variant="solid" className="shadow-[0_4px_16px_rgba(255,107,0,0.3)]">
                       <Zap size={10} fill="currentColor" /> {plan.badge}
                     </Badge>
@@ -228,6 +229,7 @@ export default function Pricing() {
                   >
                     {plan.cta}
                   </Button>
+                </div>
                 </div>
               </motion.div>
             );

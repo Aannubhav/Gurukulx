@@ -32,7 +32,7 @@ export default function Testimonials() {
   const current = TESTIMONIALS[active];
 
   return (
-    <section className="section-padding relative overflow-hidden bg-white">
+    <section className="section-padding relative overflow-hidden bg-[#FAF8F4]">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[rgba(255,107,0,0.15)] to-transparent" />
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[rgba(255,107,0,0.15)] to-transparent" />
       <div
@@ -51,11 +51,11 @@ export default function Testimonials() {
         />
 
         <div
-          className="max-w-4xl mx-auto"
+          className="max-w-3xl mx-auto"
           onMouseEnter={() => setPaused(true)}
           onMouseLeave={() => setPaused(false)}
         >
-          <div className="relative rounded-3xl p-8 sm:p-12 bg-[#FAF8F4] border border-black/[0.07] shadow-sm">
+          <div className="relative rounded-2xl p-7 sm:p-10 bg-white border border-black/[0.07] shadow-sm overflow-hidden">
             <Quote size={40} className="text-[#FF6B00]/20 mb-6" />
 
             <AnimatePresence mode="wait">

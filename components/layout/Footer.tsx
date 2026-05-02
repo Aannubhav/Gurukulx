@@ -21,9 +21,9 @@ export default function Footer() {
     <footer className="border-t border-black/[0.06] bg-[#F0EBE3]">
       {/* Main Footer */}
       <div className="container-custom py-16">
-        <div className="grid grid-cols-2 md:grid-cols-6 gap-8 lg:gap-12">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 lg:gap-10">
           {/* Brand */}
-          <div className="col-span-2">
+          <div className="col-span-2 sm:col-span-2 md:col-span-3 lg:col-span-2">
             <a href="#" className="flex items-center gap-2 mb-4 group">
               <div className="w-8 h-8 rounded-lg bg-[#FF6B00] flex items-center justify-center shadow-[0_4px_16px_rgba(255,107,0,0.3)]">
                 <Zap size={16} className="text-white" fill="white" />

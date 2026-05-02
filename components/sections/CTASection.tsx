@@ -66,30 +66,13 @@ export default function CTASection() {
   };
 
   return (
-    <section id="contact" className="section-padding relative overflow-hidden bg-[#FAF8F4]">
+    <section id="contact" className="section-padding relative overflow-hidden bg-[#F0EBE3]">
+      {/* Decorative gradient orbs — contained, won't overflow */}
       <div
-        className="absolute inset-0"
-        style={{ background: "radial-gradient(ellipse 80% 70% at 50% 50%, rgba(255,107,0,0.06) 0%, transparent 65%)" }}
+        className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full pointer-events-none"
         aria-hidden="true"
+        style={{ background: "radial-gradient(circle, rgba(255,107,0,0.08) 0%, transparent 70%)", maxWidth: "100vw" }}
       />
-
-      {!isMobile && (
-        <div className="absolute inset-0 opacity-20 pointer-events-none" aria-hidden="true">
-          <Canvas
-            camera={{ position: [0, 0, 7], fov: 50 }}
-            dpr={[1, 1.5]}
-            gl={{ antialias: false, alpha: true }}
-            style={{ background: "transparent" }}
-          >
-            <Suspense fallback={null}>
-              <TorusScene />
-              <EffectComposer>
-                <Bloom intensity={2.5} luminanceThreshold={0.4} luminanceSmoothing={0.04} mipmapBlur />
-              </EffectComposer>
-            </Suspense>
-          </Canvas>
-        </div>
-      )}
 
       <div className="container-custom relative z-10">
         <div className="max-w-3xl mx-auto text-center">

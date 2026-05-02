@@ -41,7 +41,7 @@ export default function Features() {
           className="mb-16"
         />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 auto-rows-fr">
           {FEATURES.map((feature, i) => {
             const Icon = iconMap[feature.icon] || Zap;
             const isHighlight = feature.highlight;
@@ -51,42 +51,40 @@ export default function Features() {
                 key={feature.title}
                 initial={{ opacity: 0, y: 32 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.6, delay: (i % 4) * 0.1 }}
-                className={`group relative rounded-2xl p-6 transition-all duration-300 cursor-default ${
+                viewport={{ once: true, amount: 0.15 }}
+                transition={{ duration: 0.5, delay: (i % 4) * 0.08 }}
+                className={`group relative rounded-2xl p-6 flex flex-col transition-all duration-300 cursor-default ${
                   isHighlight
-                    ? "sm:col-span-1 lg:col-span-2 bg-gradient-to-br from-[#FF6B00] to-[#FF8C21] shadow-[0_8px_40px_rgba(255,107,0,0.3)]"
-                    : "card-light hover:shadow-[0_8px_32px_rgba(255,107,0,0.12)] hover:-translate-y-1"
+                    ? "sm:col-span-2 lg:col-span-2 bg-gradient-to-br from-[#FF6B00] to-[#FF8C21] shadow-[0_8px_40px_rgba(255,107,0,0.25)]"
+                    : "card-light hover:shadow-[0_8px_32px_rgba(255,107,0,0.10)] hover:-translate-y-1"
                 }`}
               >
-                <div className="relative">
-                  <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-5 transition-all duration-300 group-hover:scale-110 ${
+                <div className="w-11 h-11 rounded-xl flex items-center justify-center mb-4 shrink-0 transition-all duration-300 group-hover:scale-105 ${
+                  isHighlight ? 'bg-white/20' : 'bg-[rgba(255,107,0,0.1)]'
+                }">
+                  <div className={`w-11 h-11 rounded-xl flex items-center justify-center ${
                     isHighlight ? "bg-white/20" : "bg-[rgba(255,107,0,0.1)]"
                   }`}>
-                    <Icon
-                      size={22}
-                      className={isHighlight ? "text-white" : "text-[#FF6B00]"}
-                      strokeWidth={isHighlight ? 2.5 : 2}
-                    />
+                    <Icon size={20} className={isHighlight ? "text-white" : "text-[#FF6B00]"} strokeWidth={2} />
                   </div>
-
-                  <h3 className={`font-[family-name:var(--font-syne)] font-bold mb-2 ${
-                    isHighlight ? "text-xl text-white" : "text-lg text-[#1A1209]"
-                  }`}>
-                    {feature.title}
-                  </h3>
-                  <p className={`leading-relaxed ${
-                    isHighlight ? "text-base text-white/80" : "text-sm text-[#6B6058]"
-                  }`}>
-                    {feature.description}
-                  </p>
-
-                  {isHighlight && (
-                    <div className="mt-4 flex items-center gap-2 text-white text-sm font-semibold group-hover:gap-3 transition-all">
-                      Learn more <span>→</span>
-                    </div>
-                  )}
                 </div>
+
+                <h3 className={`font-[family-name:var(--font-syne)] font-bold mb-2 ${
+                  isHighlight ? "text-xl text-white" : "text-base text-[#1A1209]"
+                }`}>
+                  {feature.title}
+                </h3>
+                <p className={`text-sm leading-relaxed flex-1 ${
+                  isHighlight ? "text-white/80" : "text-[#6B6058]"
+                }`}>
+                  {feature.description}
+                </p>
+
+                {isHighlight && (
+                  <div className="mt-5 flex items-center gap-2 text-white text-sm font-semibold group-hover:gap-3 transition-all">
+                    Learn more <span>→</span>
+                  </div>
+                )}
               </motion.div>
             );
           })}
