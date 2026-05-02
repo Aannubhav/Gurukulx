@@ -57,10 +57,9 @@ export default function Interactive3D() {
   const currentProduct = products[selected];
 
   return (
-    <section className="section-padding relative overflow-hidden bg-[#0F0E13]">
-      {/* Top and bottom dividers */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[rgba(255,140,33,0.2)] to-transparent" />
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[rgba(255,140,33,0.2)] to-transparent" />
+    <section className="section-padding relative overflow-hidden bg-[#F0EBE3]">
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[rgba(255,107,0,0.2)] to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[rgba(255,107,0,0.2)] to-transparent" />
 
       <div className="container-custom">
         <SectionHeading
@@ -71,14 +70,12 @@ export default function Interactive3D() {
           className="mb-12"
         />
 
-        <div className="relative rounded-3xl overflow-hidden border border-[rgba(255,140,33,0.1)]"
-          style={{
-            background: "rgba(8, 8, 12, 0.8)",
-            boxShadow: "0 0 80px rgba(255,140,33,0.06) inset",
-          }}
+        <div
+          className="relative rounded-3xl overflow-hidden border border-black/[0.07]"
+          style={{ background: "#FFFFFF", boxShadow: "0 8px 40px rgba(0,0,0,0.07)" }}
         >
           {/* 3D Canvas */}
-          <div className="w-full h-[55vh] min-h-[380px]" aria-label="Interactive 3D product showcase">
+          <div className="w-full h-[55vh] min-h-[380px] bg-[#FAF8F4]" aria-label="Interactive 3D product showcase">
             {!isMobile ? (
               <Canvas
                 camera={{ position: [0, 1.5, 7], fov: 45 }}
@@ -89,12 +86,7 @@ export default function Interactive3D() {
                 <Suspense fallback={null}>
                   <InteractiveShowcaseScene selected={selected} onSelect={setSelected} />
                   <EffectComposer>
-                    <Bloom
-                      intensity={2.0}
-                      luminanceThreshold={0.5}
-                      luminanceSmoothing={0.025}
-                      mipmapBlur
-                    />
+                    <Bloom intensity={2.0} luminanceThreshold={0.5} luminanceSmoothing={0.025} mipmapBlur />
                   </EffectComposer>
                 </Suspense>
               </Canvas>
@@ -106,11 +98,11 @@ export default function Interactive3D() {
                     onClick={() => setSelected(i)}
                     className={`relative w-20 h-32 rounded-2xl border transition-all duration-300 ${
                       selected === i
-                        ? "border-[#FF8C21] shadow-[0_0_30px_rgba(255,140,33,0.4)] scale-110 bg-[rgba(255,140,33,0.15)]"
-                        : "border-[rgba(255,140,33,0.15)] bg-[rgba(255,140,33,0.04)]"
+                        ? "border-[#FF6B00] shadow-[0_4px_20px_rgba(255,107,0,0.3)] scale-110 bg-[rgba(255,107,0,0.08)]"
+                        : "border-black/[0.1] bg-white"
                     }`}
                   >
-                    <div className="absolute inset-2 rounded-xl bg-[#FF8C21]/20 border border-[#FF8C21]/40" />
+                    <div className={`absolute inset-2 rounded-xl ${selected === i ? "bg-[#FF6B00]/20 border border-[#FF6B00]/40" : "bg-black/[0.04]"}`} />
                   </button>
                 ))}
               </div>
@@ -118,48 +110,36 @@ export default function Interactive3D() {
           </div>
 
           {/* Product selector buttons */}
-          <div className="border-t border-[rgba(255,140,33,0.08)] flex flex-col sm:flex-row">
+          <div className="border-t border-black/[0.06] flex flex-col sm:flex-row">
             {products.map((product, i) => {
               const Icon = product.icon;
               const isActive = selected === i;
-
               return (
                 <button
                   key={product.id}
                   onClick={() => setSelected(i)}
                   className={`flex-1 flex items-center gap-3 px-6 py-4 transition-all duration-300 text-left ${
                     isActive
-                      ? "bg-[rgba(255,140,33,0.08)] border-t-2 border-t-[#FF8C21] sm:border-t-0 sm:border-l-2 sm:border-l-[#FF8C21]"
-                      : "hover:bg-[rgba(255,140,33,0.04)] border-t-2 border-t-transparent sm:border-t-0 sm:border-l-2 sm:border-l-transparent"
+                      ? "bg-[rgba(255,107,0,0.06)] border-t-2 border-t-[#FF6B00] sm:border-t-0 sm:border-l-2 sm:border-l-[#FF6B00]"
+                      : "hover:bg-black/[0.02] border-t-2 border-t-transparent sm:border-t-0 sm:border-l-2 sm:border-l-transparent"
                   }`}
                 >
-                  <div
-                    className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 transition-colors ${
-                      isActive ? "bg-[#FF8C21]" : "bg-[rgba(255,140,33,0.1)]"
-                    }`}
-                  >
-                    <Icon
-                      size={15}
-                      className={isActive ? "text-[#08080C]" : "text-[#FF8C21]"}
-                    />
+                  <div className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 transition-colors ${
+                    isActive ? "bg-[#FF6B00]" : "bg-[rgba(255,107,0,0.1)]"
+                  }`}>
+                    <Icon size={15} className={isActive ? "text-white" : "text-[#FF6B00]"} />
                   </div>
                   <div>
-                    <p
-                      className={`text-sm font-semibold ${
-                        isActive ? "text-[#F5F0E8]" : "text-[#9A8E7F]"
-                      }`}
-                    >
-                      {product.name}
-                    </p>
-                    <p className="text-xs text-[#9A8E7F]/60">{product.tagline}</p>
+                    <p className={`text-sm font-semibold ${isActive ? "text-[#1A1209]" : "text-[#6B6058]"}`}>{product.name}</p>
+                    <p className="text-xs text-[#6B6058]/60">{product.tagline}</p>
                   </div>
                 </button>
               );
             })}
           </div>
 
-          {/* Product info overlay */}
-          <div className="border-t border-[rgba(255,140,33,0.08)] p-6 sm:p-8">
+          {/* Product info */}
+          <div className="border-t border-black/[0.06] p-6 sm:p-8">
             <AnimatePresence mode="wait">
               <motion.div
                 key={selected}
@@ -170,20 +150,18 @@ export default function Interactive3D() {
                 className="flex flex-col sm:flex-row sm:items-center gap-6 sm:gap-12"
               >
                 <div className="flex-1">
-                  <h3 className="font-[family-name:var(--font-syne)] text-xl font-bold text-[#F5F0E8] mb-2">
+                  <h3 className="font-[family-name:var(--font-syne)] text-xl font-bold text-[#1A1209] mb-2">
                     {currentProduct.name}
                   </h3>
-                  <p className="text-sm text-[#9A8E7F] leading-relaxed max-w-lg">
+                  <p className="text-sm text-[#6B6058] leading-relaxed max-w-lg">
                     {currentProduct.description}
                   </p>
                 </div>
                 <div className="flex gap-8 shrink-0">
                   {currentProduct.stats.map((stat) => (
                     <div key={stat.label} className="text-center">
-                      <p className="font-[family-name:var(--font-syne)] text-2xl font-bold text-gradient">
-                        {stat.value}
-                      </p>
-                      <p className="text-xs text-[#9A8E7F] mt-0.5">{stat.label}</p>
+                      <p className="font-[family-name:var(--font-syne)] text-2xl font-bold text-gradient">{stat.value}</p>
+                      <p className="text-xs text-[#6B6058] mt-0.5">{stat.label}</p>
                     </div>
                   ))}
                 </div>
@@ -192,9 +170,8 @@ export default function Interactive3D() {
           </div>
         </div>
 
-        {/* Hint */}
         {!isMobile && (
-          <p className="text-center text-xs text-[#9A8E7F]/50 mt-4 tracking-wider">
+          <p className="text-center text-xs text-[#6B6058]/50 mt-4 tracking-wider">
             Click a product · Drag to rotate
           </p>
         )}

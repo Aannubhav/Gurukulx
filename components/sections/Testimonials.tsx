@@ -27,30 +27,18 @@ export default function Testimonials() {
     return stop;
   }, [paused]);
 
-  const next = () => {
-    setActive((prev) => (prev + 1) % TESTIMONIALS.length);
-  };
-
-  const prev = () => {
-    setActive((prev) => (prev - 1 + TESTIMONIALS.length) % TESTIMONIALS.length);
-  };
-
+  const next = () => setActive((prev) => (prev + 1) % TESTIMONIALS.length);
+  const prev = () => setActive((prev) => (prev - 1 + TESTIMONIALS.length) % TESTIMONIALS.length);
   const current = TESTIMONIALS[active];
 
   return (
-    <section className="section-padding relative overflow-hidden bg-[#0F0E13]">
-      {/* Dividers */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[rgba(255,140,33,0.15)] to-transparent" />
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[rgba(255,140,33,0.15)] to-transparent" />
-
-      {/* Background glow */}
+    <section className="section-padding relative overflow-hidden bg-white">
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[rgba(255,107,0,0.15)] to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[rgba(255,107,0,0.15)] to-transparent" />
       <div
         className="absolute inset-0 pointer-events-none"
         aria-hidden="true"
-        style={{
-          background:
-            "radial-gradient(ellipse 50% 60% at 50% 50%, rgba(255,140,33,0.05) 0%, transparent 70%)",
-        }}
+        style={{ background: "radial-gradient(ellipse 50% 60% at 50% 50%, rgba(255,107,0,0.04) 0%, transparent 70%)" }}
       />
 
       <div className="container-custom">
@@ -67,134 +55,70 @@ export default function Testimonials() {
           onMouseEnter={() => setPaused(true)}
           onMouseLeave={() => setPaused(false)}
         >
-          {/* Main quote card */}
-          <div
-            className="relative rounded-3xl p-8 sm:p-12 overflow-hidden"
-            style={{
-              background: "rgba(255, 160, 50, 0.04)",
-              border: "1px solid rgba(255, 140, 33, 0.1)",
-            }}
-          >
-            {/* Orange quote mark */}
-            <div className="absolute top-8 left-8 opacity-20" aria-hidden="true">
-              <Quote size={72} className="text-[#FF8C21]" fill="#FF8C21" />
-            </div>
-
-            {/* Glow */}
-            <div
-              className="absolute inset-0 pointer-events-none"
-              aria-hidden="true"
-              style={{
-                background:
-                  "radial-gradient(ellipse 60% 60% at 50% 0%, rgba(255,140,33,0.06) 0%, transparent 60%)",
-              }}
-            />
+          <div className="relative rounded-3xl p-8 sm:p-12 bg-[#FAF8F4] border border-black/[0.07] shadow-sm">
+            <Quote size={40} className="text-[#FF6B00]/20 mb-6" />
 
             <AnimatePresence mode="wait">
               <motion.div
                 key={active}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.45 }}
-                className="relative"
+                exit={{ opacity: 0, y: -16 }}
+                transition={{ duration: 0.4 }}
               >
-                <blockquote className="text-xl sm:text-2xl lg:text-3xl font-[family-name:var(--font-syne)] font-medium text-[#F5F0E8] leading-[1.4] mb-8">
+                <p className="text-xl sm:text-2xl text-[#1A1209] leading-relaxed font-medium mb-8">
                   &ldquo;{current.quote}&rdquo;
-                </blockquote>
+                </p>
 
                 <div className="flex items-center gap-4">
                   <div
-                    className="w-12 h-12 rounded-full flex items-center justify-center text-sm font-bold text-[#FF8C21] shrink-0"
-                    style={{
-                      background: "rgba(255,140,33,0.15)",
-                      border: "1px solid rgba(255,140,33,0.3)",
-                      boxShadow: "0 0 20px rgba(255,140,33,0.15)",
-                    }}
-                    aria-label={current.author}
+                    className="w-12 h-12 rounded-full flex items-center justify-center text-sm font-bold text-white shrink-0"
+                    style={{ background: "linear-gradient(135deg, #FF8C21, #FF6B00)" }}
                   >
                     {current.avatar}
                   </div>
                   <div>
-                    <p className="font-semibold text-[#F5F0E8]">{current.author}</p>
-                    <p className="text-sm text-[#9A8E7F]">
-                      {current.title}, {current.company}
-                    </p>
+                    <p className="font-semibold text-[#1A1209]">{current.author}</p>
+                    <p className="text-sm text-[#6B6058]">{current.title}</p>
+                  </div>
+                  <div className="ml-auto flex gap-1">
+                    {[...Array(5)].map((_, i) => (
+                      <span key={i} className="text-[#FF6B00] text-sm">★</span>
+                    ))}
                   </div>
                 </div>
               </motion.div>
             </AnimatePresence>
-          </div>
 
-          {/* Controls */}
-          <div className="flex items-center justify-between mt-8">
-            {/* Dots */}
-            <div className="flex items-center gap-2">
-              {TESTIMONIALS.map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => setActive(i)}
-                  className={`rounded-full transition-all duration-300 ${
-                    i === active
-                      ? "w-6 h-2 bg-[#FF8C21]"
-                      : "w-2 h-2 bg-[rgba(255,140,33,0.25)] hover:bg-[rgba(255,140,33,0.5)]"
-                  }`}
-                  aria-label={`Go to testimonial ${i + 1}`}
-                />
-              ))}
-            </div>
-
-            {/* Arrows */}
-            <div className="flex items-center gap-2">
-              <button
-                onClick={prev}
-                className="w-10 h-10 rounded-xl border border-[rgba(255,140,33,0.15)] flex items-center justify-center text-[#9A8E7F] hover:text-[#FF8C21] hover:border-[rgba(255,140,33,0.35)] transition-all"
-                aria-label="Previous testimonial"
-              >
-                <ChevronLeft size={18} />
-              </button>
-              <button
-                onClick={next}
-                className="w-10 h-10 rounded-xl border border-[rgba(255,140,33,0.15)] flex items-center justify-center text-[#9A8E7F] hover:text-[#FF8C21] hover:border-[rgba(255,140,33,0.35)] transition-all"
-                aria-label="Next testimonial"
-              >
-                <ChevronRight size={18} />
-              </button>
-            </div>
-          </div>
-        </div>
-
-        {/* Secondary cards preview */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-12">
-          {TESTIMONIALS.slice(0, 3).map((t, i) => (
-            <motion.button
-              key={t.author}
-              onClick={() => setActive(i)}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1, duration: 0.5 }}
-              className={`text-left p-5 rounded-2xl border transition-all duration-300 ${
-                active === i
-                  ? "border-[rgba(255,140,33,0.3)] bg-[rgba(255,140,33,0.08)]"
-                  : "border-[rgba(255,140,33,0.06)] bg-[rgba(255,160,50,0.02)] hover:border-[rgba(255,140,33,0.15)]"
-              }`}
-            >
-              <p className="text-xs text-[#9A8E7F] line-clamp-3 mb-3">&ldquo;{t.quote}&rdquo;</p>
-              <div className="flex items-center gap-2">
-                <div
-                  className="w-7 h-7 rounded-full flex items-center justify-center text-[10px] font-bold text-[#FF8C21]"
-                  style={{ background: "rgba(255,140,33,0.12)" }}
-                >
-                  {t.avatar}
-                </div>
-                <div>
-                  <p className="text-xs font-semibold text-[#F5F0E8]">{t.author}</p>
-                  <p className="text-[10px] text-[#9A8E7F]">{t.company}</p>
-                </div>
+            {/* Nav buttons */}
+            <div className="flex items-center justify-between mt-8">
+              <div className="flex gap-2">
+                {TESTIMONIALS.map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setActive(i)}
+                    className={`h-1.5 rounded-full transition-all duration-300 ${
+                      i === active ? "w-6 bg-[#FF6B00]" : "w-1.5 bg-black/[0.12]"
+                    }`}
+                  />
+                ))}
               </div>
-            </motion.button>
-          ))}
+              <div className="flex gap-2">
+                <button
+                  onClick={prev}
+                  className="w-9 h-9 rounded-full border border-black/[0.1] flex items-center justify-center text-[#6B6058] hover:text-[#FF6B00] hover:border-[rgba(255,107,0,0.3)] transition-all"
+                >
+                  <ChevronLeft size={16} />
+                </button>
+                <button
+                  onClick={next}
+                  className="w-9 h-9 rounded-full border border-black/[0.1] flex items-center justify-center text-[#6B6058] hover:text-[#FF6B00] hover:border-[rgba(255,107,0,0.3)] transition-all"
+                >
+                  <ChevronRight size={16} />
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

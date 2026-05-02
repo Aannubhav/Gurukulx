@@ -39,7 +39,7 @@ export default function RootLayout({
       className={`${syne.variable} ${plusJakarta.variable} h-full`}
     >
       <body
-        className="min-h-full flex flex-col bg-[#08080C] text-[#F5F0E8] antialiased"
+        className="min-h-full flex flex-col bg-[#FAF8F4] text-[#1A1209] antialiased"
         style={{ fontFamily: "var(--font-jakarta), sans-serif" }}
       >
         {children}

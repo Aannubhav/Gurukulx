@@ -1,16 +1,16 @@
 @import "tailwindcss";
 
 :root {
-  --bg-primary: #08080C;
-  --bg-secondary: #0F0E13;
-  --bg-card: rgba(255, 160, 50, 0.04);
-  --text-primary: #F5F0E8;
-  --text-secondary: #9A8E7F;
-  --accent: #FF8C21;
-  --accent-light: #FFB366;
-  --accent-dark: #CC6A10;
-  --accent-glow: rgba(255, 140, 33, 0.2);
-  --accent-glow-strong: rgba(255, 140, 33, 0.5);
+  --bg-primary: #FAF8F4;
+  --bg-secondary: #F0EBE3;
+  --bg-card: #FFFFFF;
+  --text-primary: #1A1209;
+  --text-secondary: #6B6058;
+  --accent: #FF6B00;
+  --accent-light: #FF8C21;
+  --accent-dark: #CC5500;
+  --accent-glow: rgba(255, 107, 0, 0.2);
+  --accent-glow-strong: rgba(255, 107, 0, 0.4);
   --gradient-start: #FF8C21;
   --gradient-end: #FF6B00;
 }
@@ -45,7 +45,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 ::selection {
-  background-color: rgba(255, 140, 33, 0.3);
+  background-color: rgba(255, 107, 0, 0.2);
   color: var(--text-primary);
 }
 
@@ -53,7 +53,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 5px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--bg-primary);
+  background: var(--bg-secondary);
 }
 ::-webkit-scrollbar-thumb {
   background: var(--accent-dark);
@@ -147,44 +147,44 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .text-gradient-warm {
-  background: linear-gradient(135deg, #FFD08A, #FF8C21, #FF6B00);
+  background: linear-gradient(135deg, #FF8C21, #FF6B00);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .glass {
-  background: rgba(15, 14, 19, 0.85);
+  background: rgba(255, 252, 248, 0.92);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(255, 140, 33, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
 }
 
 .glass-card {
-  background: rgba(255, 160, 50, 0.04);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 140, 33, 0.08);
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
 }
 
 .glow-orange {
-  box-shadow: 0 0 30px var(--accent-glow), 0 0 60px rgba(255, 140, 33, 0.08);
+  box-shadow: 0 4px 20px var(--accent-glow), 0 0 40px rgba(255, 107, 0, 0.08);
 }
 
 .glow-orange-strong {
-  box-shadow: 0 0 50px var(--accent-glow-strong), 0 0 100px rgba(255, 140, 33, 0.15);
+  box-shadow: 0 8px 40px var(--accent-glow-strong), 0 0 80px rgba(255, 107, 0, 0.12);
 }
 
 .glow-text {
-  text-shadow: 0 0 40px rgba(255, 140, 33, 0.6);
+  text-shadow: 0 0 30px rgba(255, 107, 0, 0.4);
 }
 
 .orange-border {
-  border: 1px solid rgba(255, 140, 33, 0.15);
+  border: 1px solid rgba(255, 107, 0, 0.2);
 }
 
 .orange-border-bright {
-  border: 1px solid rgba(255, 140, 33, 0.4);
+  border: 1px solid rgba(255, 107, 0, 0.5);
 }
 
 .no-scrollbar::-webkit-scrollbar {
@@ -215,11 +215,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .radial-glow {
-  background: radial-gradient(ellipse at center, rgba(255, 140, 33, 0.15) 0%, transparent 70%);
+  background: radial-gradient(ellipse at center, rgba(255, 107, 0, 0.1) 0%, transparent 70%);
 }
 
 .radial-glow-subtle {
-  background: radial-gradient(ellipse at center, rgba(255, 140, 33, 0.06) 0%, transparent 60%);
+  background: radial-gradient(ellipse at center, rgba(255, 107, 0, 0.05) 0%, transparent 60%);
 }
 
 /* Card hover tilt */
@@ -230,4 +230,25 @@ h1, h2, h3, h4, h5, h6 {
 
 .card-tilt:hover {
   transform: perspective(1000px) rotateX(4deg) rotateY(-4deg) translateZ(8px);
+}
+
+/* Light shadow card */
+.card-light {
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
+  border-radius: 1rem;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.card-light:hover {
+  box-shadow: 0 8px 32px rgba(255, 107, 0, 0.12);
+  transform: translateY(-2px);
+}
+
+/* Feature badge pill */
+.feature-pill {
+  background: rgba(255, 107, 0, 0.08);
+  border: 1px solid rgba(255, 107, 0, 0.18);
+  color: #CC5500;
 }

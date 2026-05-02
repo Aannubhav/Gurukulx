@@ -32,18 +32,18 @@ export default function Navbar() {
         transition={{ duration: 0.35 }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled
-            ? "glass border-b border-[rgba(255,140,33,0.08)] py-3"
+            ? "glass border-b border-black/[0.06] py-3"
             : "bg-transparent py-5"
         }`}
       >
         <div className="container-custom flex items-center justify-between">
           {/* Logo */}
           <a href="#" className="flex items-center gap-2 group">
-            <div className="w-8 h-8 rounded-lg bg-[#FF8C21] flex items-center justify-center shadow-[0_0_20px_rgba(255,140,33,0.5)] group-hover:shadow-[0_0_30px_rgba(255,140,33,0.7)] transition-all duration-300">
-              <Zap size={16} className="text-[#08080C]" fill="#08080C" />
+            <div className="w-8 h-8 rounded-lg bg-[#FF6B00] flex items-center justify-center shadow-[0_4px_16px_rgba(255,107,0,0.35)] group-hover:shadow-[0_4px_24px_rgba(255,107,0,0.5)] transition-all duration-300">
+              <Zap size={16} className="text-white" fill="white" />
             </div>
             <span
-              className="font-[family-name:var(--font-syne)] text-xl font-800 text-[#F5F0E8] tracking-tight"
+              className="font-[family-name:var(--font-syne)] text-xl text-[#1A1209] tracking-tight"
               style={{ fontWeight: 800 }}
             >
               {COMPANY_NAME}
@@ -56,17 +56,17 @@ export default function Navbar() {
               <a
                 key={link.label}
                 href={link.href}
-                className="relative px-4 py-2 text-sm text-[#9A8E7F] hover:text-[#F5F0E8] transition-colors duration-200 group"
+                className="relative px-4 py-2 text-sm text-[#6B6058] hover:text-[#1A1209] transition-colors duration-200 group font-medium"
               >
                 {link.label}
-                <span className="absolute bottom-0.5 left-4 right-4 h-px bg-[#FF8C21] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+                <span className="absolute bottom-0.5 left-4 right-4 h-0.5 bg-[#FF6B00] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-full" />
               </a>
             ))}
           </nav>
 
           {/* CTA */}
           <div className="hidden md:flex items-center gap-3">
-            <a href="#pricing" className="text-sm text-[#9A8E7F] hover:text-[#F5F0E8] transition-colors">
+            <a href="#pricing" className="text-sm text-[#6B6058] hover:text-[#1A1209] transition-colors font-medium">
               Sign in
             </a>
             <Button size="sm" glow onClick={() => {}}>
@@ -77,7 +77,7 @@ export default function Navbar() {
           {/* Mobile hamburger */}
           <button
             onClick={() => setMenuOpen((v) => !v)}
-            className="md:hidden w-10 h-10 flex items-center justify-center text-[#F5F0E8] hover:text-[#FF8C21] transition-colors"
+            className="md:hidden w-10 h-10 flex items-center justify-center text-[#1A1209] hover:text-[#FF6B00] transition-colors"
             aria-label="Toggle menu"
           >
             {menuOpen ? <X size={22} /> : <Menu size={22} />}
@@ -96,7 +96,7 @@ export default function Navbar() {
             className="fixed inset-0 z-40 md:hidden"
           >
             <div
-              className="absolute inset-0 bg-[#08080C]/90 backdrop-blur-2xl"
+              className="absolute inset-0 bg-[#FAF8F4]/95 backdrop-blur-2xl"
               onClick={() => setMenuOpen(false)}
             />
             <div className="relative flex flex-col items-center justify-center h-full gap-8">
@@ -108,7 +108,7 @@ export default function Navbar() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.07 }}
                   onClick={() => setMenuOpen(false)}
-                  className="font-[family-name:var(--font-syne)] text-3xl font-bold text-[#F5F0E8] hover:text-[#FF8C21] transition-colors"
+                  className="font-[family-name:var(--font-syne)] text-3xl font-bold text-[#1A1209] hover:text-[#FF6B00] transition-colors"
                 >
                   {link.label}
                 </motion.a>

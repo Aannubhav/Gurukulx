@@ -1,6 +1,5 @@
 "use client";
 
-import { useRef } from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
@@ -42,14 +41,14 @@ export default function SectionHeading({
       {eyebrow && (
         <motion.p
           variants={itemVariants}
-          className="text-xs font-semibold tracking-[0.2em] uppercase text-[#FF8C21] mb-4"
+          className="text-xs font-semibold tracking-[0.2em] uppercase text-[#FF6B00] mb-4"
         >
           {eyebrow}
         </motion.p>
       )}
       <motion.h2
         variants={itemVariants}
-        className="font-[family-name:var(--font-syne)] text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] text-[#F5F0E8]"
+        className="font-[family-name:var(--font-syne)] text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] text-[#1A1209]"
       >
         {title}{" "}
         {titleHighlight && (
@@ -60,7 +59,7 @@ export default function SectionHeading({
         <motion.p
           variants={itemVariants}
           className={cn(
-            "mt-5 text-lg text-[#9A8E7F] leading-relaxed",
+            "mt-5 text-lg text-[#6B6058] leading-relaxed",
             center ? "max-w-2xl mx-auto" : "max-w-xl"
           )}
         >
