@@ -44,8 +44,9 @@
   transition: color 0.2s, background 0.2s;
 }
 
-.navbar__link:hover {
-  color: var(--color-black);
+.navbar__link:hover,
+.navbar__link--active {
+  color: var(--color-primary);
   background: var(--color-bg);
 }
 

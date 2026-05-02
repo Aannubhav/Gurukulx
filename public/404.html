@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>GurukulamX</title>
+  <script>
+    // GitHub Pages SPA redirect — encodes the path into a query string
+    // so index.html can restore it before React Router boots.
+    var base = '/Gurukulx';
+    var l = window.location;
+    var path = l.pathname.slice(base.length) || '/';
+    l.replace(
+      l.protocol + '//' + l.host + base + '/?p=' +
+      path.replace(/&/g, '~and~') +
+      (l.search ? '&q=' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+      l.hash
+    );
+  </script>
+</head>
+<body></body>
+</html>

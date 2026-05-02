@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { PRICING } from '../data/constants'
 import './Pricing.css'
 
@@ -12,19 +11,6 @@ function CheckIcon() {
 }
 
 export default function Pricing() {
-  const [showCalc, setShowCalc] = useState(false)
-  const [gmv, setGmv] = useState(500000)
-
-  const annualFee = 20000
-  const share = gmv * 0.08
-  const total = annualFee + share
-  const keeps = gmv - share
-  const breakPct = Math.min((gmv / 2500000) * 100, 100)
-
-  const fmt = n => n >= 100000
-    ? `₹${(n / 100000).toFixed(1)}L`
-    : `₹${n.toLocaleString('en-IN')}`
-
   return (
     <section className="pricing section section--gray" id="pricing">
       <div className="container">
@@ -43,9 +29,9 @@ export default function Pricing() {
         {/* Quick selector */}
         <div className="pricing__selectors">
           {[
-            { q: 'Low cash now', a: '→ Starter' },
-            { q: 'Want fixed cost', a: '→ Professional' },
-            { q: 'Want ownership', a: '→ Enterprise' },
+            { q: 'Just starting out', a: '→ Starter' },
+            { q: 'Want fixed cost',   a: '→ Professional' },
+            { q: 'Full ownership',    a: '→ Enterprise' },
           ].map(({ q, a }) => (
             <div key={q} className="pricing__selector">
               <span className="pricing__selector-q">{q}</span>
@@ -85,56 +71,6 @@ export default function Pricing() {
                 </p>
               </div>
 
-              {/* Revenue share calculator (Starter only) */}
-              {plan.id === 'starter' && (
-                <>
-                  <button
-                    className={`pricing__calc-toggle ${plan.highlight ? '' : ''}`}
-                    onClick={() => setShowCalc(v => !v)}
-                  >
-                    {showCalc ? 'Hide' : 'Calculate'} your revenue share ↕
-                  </button>
-                  {showCalc && (
-                    <div className="pricing__calc">
-                      <div className="pricing__calc-row">
-                        <span>Annual GMV</span>
-                        <strong>{fmt(gmv)}</strong>
-                      </div>
-                      <input
-                        type="range"
-                        min={100000}
-                        max={5000000}
-                        step={100000}
-                        value={gmv}
-                        onChange={e => setGmv(Number(e.target.value))}
-                        className="pricing__range"
-                      />
-                      <div className="pricing__calc-stats">
-                        {[
-                          { label: 'Annual fee', val: '₹20,000' },
-                          { label: '8% GMV share', val: fmt(share), accent: true },
-                          { label: 'Total you pay', val: fmt(total) },
-                          { label: 'You keep', val: fmt(keeps), accent: true },
-                        ].map(({ label, val, accent }) => (
-                          <div key={label} className="pricing__calc-stat">
-                            <span className="pricing__calc-stat-label">{label}</span>
-                            <span className={`pricing__calc-stat-val ${accent ? 'text-orange' : ''}`}>{val}</span>
-                          </div>
-                        ))}
-                      </div>
-                      <div className="pricing__calc-bar">
-                        <div className="pricing__calc-bar-track">
-                          <div className="pricing__calc-bar-fill" style={{ width: `${breakPct}%` }} />
-                        </div>
-                        <span className="pricing__calc-bar-label">
-                          {Math.round(breakPct)}% toward Professional breakeven (₹25L)
-                        </span>
-                      </div>
-                    </div>
-                  )}
-                </>
-              )}
-
               <p className={`pricing__desc ${plan.highlight ? 'pricing__desc--light' : ''}`}>
                 {plan.description}
               </p>
@@ -159,14 +95,14 @@ export default function Pricing() {
           ))}
         </div>
 
-        {/* Infra note */}
+        {/* Coverage note */}
         <div className="pricing__infra card">
-          <p className="pricing__infra-label">Infrastructure costs — paid separately, kept transparent</p>
+          <p className="pricing__infra-label">What's covered — full transparency</p>
           <div className="pricing__infra-grid">
             {[
-              { item: 'Hosting / Server', range: '₹5K – ₹20K / mo' },
-              { item: 'Domain + CDN', range: '₹500 – ₹2K / mo' },
-              { item: 'SMS / Email', range: '₹500 – ₹3K / mo' },
+              { item: 'Hosting & infrastructure', range: 'Scoped to your usage' },
+              { item: 'Domain, CDN & SSL',         range: 'Set up by our team' },
+              { item: 'SMS, email & support',       range: 'Bundled in every plan' },
             ].map(({ item, range }) => (
               <div key={item} className="pricing__infra-item">
                 <span className="pricing__infra-dot" />
@@ -178,12 +114,6 @@ export default function Pricing() {
             ))}
           </div>
         </div>
-
-        <p className="pricing__dev-note">
-          Custom development:{' '}
-          <strong>₹699/hr</strong> (Starter &amp; Professional) ·{' '}
-          <strong>₹599/hr</strong> (Enterprise)
-        </p>
       </div>
     </section>
   )
