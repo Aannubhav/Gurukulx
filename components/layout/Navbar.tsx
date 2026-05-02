@@ -2,9 +2,10 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Zap } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import Image from "next/image";
 import Button from "@/components/ui/Button";
-import { NAV_LINKS, COMPANY_NAME } from "@/lib/constants";
+import { NAV_LINKS } from "@/lib/constants";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -38,16 +39,15 @@ export default function Navbar() {
       >
         <div className="container-custom flex items-center justify-between">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2 group">
-            <div className="w-8 h-8 rounded-lg bg-[#FF6A2A] flex items-center justify-center shadow-[0_4px_16px_rgba(255,106,42,0.35)] group-hover:shadow-[0_4px_24px_rgba(255,106,42,0.5)] transition-all duration-300">
-              <Zap size={16} className="text-white" fill="white" />
-            </div>
-            <span
-              className="font-[family-name:var(--font-syne)] text-xl text-[#000000] tracking-tight"
-              style={{ fontWeight: 800 }}
-            >
-              {COMPANY_NAME}
-            </span>
+          <a href="#" className="flex items-center group">
+            <Image
+              src="/images/logo.png"
+              alt="GurukulamX"
+              width={160}
+              height={48}
+              className="h-10 w-auto object-contain"
+              unoptimized
+            />
           </a>
 
           {/* Desktop Nav */}
@@ -100,6 +100,14 @@ export default function Navbar() {
               onClick={() => setMenuOpen(false)}
             />
             <div className="relative flex flex-col items-center justify-center h-full gap-8">
+              <Image
+                src="/images/logo.png"
+                alt="GurukulamX"
+                width={200}
+                height={60}
+                className="h-12 w-auto object-contain mb-4"
+                unoptimized
+              />
               {NAV_LINKS.map((link, i) => (
                 <motion.a
                   key={link.label}

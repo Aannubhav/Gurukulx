@@ -1,6 +1,7 @@
 "use client";
 
-import { Zap, X, Globe, Mail } from "lucide-react";
+import { X, Globe, Mail } from "lucide-react";
+import Image from "next/image";
 import { COMPANY_NAME } from "@/lib/constants";
 
 const footerLinks = {
@@ -24,16 +25,15 @@ export default function Footer() {
         <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 lg:gap-10">
           {/* Brand */}
           <div className="col-span-2 sm:col-span-2 md:col-span-3 lg:col-span-2">
-            <a href="#" className="flex items-center gap-2 mb-4 group">
-              <div className="w-8 h-8 rounded-lg bg-[#FF6A2A] flex items-center justify-center shadow-[0_4px_16px_rgba(255,106,42,0.3)]">
-                <Zap size={16} className="text-white" fill="white" />
-              </div>
-              <span
-                className="font-[family-name:var(--font-syne)] text-xl text-[#000000]"
-                style={{ fontWeight: 800 }}
-              >
-                {COMPANY_NAME}
-              </span>
+            <a href="#" className="flex items-center mb-4 group">
+              <Image
+                src="/images/logo.png"
+                alt="GurukulamX"
+                width={180}
+                height={54}
+                className="h-11 w-auto object-contain"
+                unoptimized
+              />
             </a>
             <p className="text-sm text-[#555555] leading-relaxed max-w-xs mb-6">
               Full LMS, mobile apps, and AI learning engine — all under your brand. Built for India&apos;s coaching institutes and EdTech startups.
