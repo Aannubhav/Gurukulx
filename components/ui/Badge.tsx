@@ -12,11 +12,11 @@ export default function Badge({ children, variant = "default", className }: Badg
 
   const variants = {
     default:
-      "bg-[rgba(255,107,0,0.1)] text-[#CC5500] border border-[rgba(255,107,0,0.2)]",
+      "bg-[#FFE5D6] text-[#CC3A10] border border-[rgba(255,106,42,0.2)]",
     outline:
-      "border border-[#FF6B00]/60 text-[#FF6B00] bg-transparent",
+      "border border-[#FF6A2A]/60 text-[#FF6A2A] bg-transparent",
     solid:
-      "bg-[#FF6B00] text-white",
+      "bg-[#FF6A2A] text-white",
   };
 
   return (

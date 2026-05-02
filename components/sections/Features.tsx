@@ -25,11 +25,11 @@ const iconMap: Record<string, LucideIcon> = {
 
 export default function Features() {
   return (
-    <section id="features" className="section-padding relative overflow-hidden bg-[#FAF8F4]">
+    <section id="features" className="section-padding relative overflow-hidden bg-[#F7F7F7]">
       <div
         className="absolute inset-0 pointer-events-none"
         aria-hidden="true"
-        style={{ background: "radial-gradient(ellipse 50% 60% at 50% 50%, rgba(255,107,0,0.04) 0%, transparent 70%)" }}
+        style={{ background: "radial-gradient(ellipse 50% 60% at 50% 50%, rgba(255,106,42,0.04) 0%, transparent 70%)" }}
       />
 
       <div className="container-custom">
@@ -55,27 +55,27 @@ export default function Features() {
                 transition={{ duration: 0.5, delay: (i % 4) * 0.08 }}
                 className={`group relative rounded-2xl p-6 flex flex-col transition-all duration-300 cursor-default ${
                   isHighlight
-                    ? "sm:col-span-2 lg:col-span-2 bg-gradient-to-br from-[#FF6B00] to-[#FF8C21] shadow-[0_8px_40px_rgba(255,107,0,0.25)]"
-                    : "card-light hover:shadow-[0_8px_32px_rgba(255,107,0,0.10)] hover:-translate-y-1"
+                    ? "sm:col-span-2 lg:col-span-2 bg-gradient-to-br from-[#FF6A2A] to-[#FF8547] shadow-[0_8px_40px_rgba(255,106,42,0.25)]"
+                    : "card-light hover:shadow-[0_8px_32px_rgba(255,106,42,0.10)] hover:-translate-y-1"
                 }`}
               >
                 <div className="w-11 h-11 rounded-xl flex items-center justify-center mb-4 shrink-0 transition-all duration-300 group-hover:scale-105 ${
-                  isHighlight ? 'bg-white/20' : 'bg-[rgba(255,107,0,0.1)]'
+                  isHighlight ? 'bg-white/20' : 'bg-[#FFE5D6]'
                 }">
                   <div className={`w-11 h-11 rounded-xl flex items-center justify-center ${
-                    isHighlight ? "bg-white/20" : "bg-[rgba(255,107,0,0.1)]"
+                    isHighlight ? "bg-white/20" : "bg-[#FFE5D6]"
                   }`}>
-                    <Icon size={20} className={isHighlight ? "text-white" : "text-[#FF6B00]"} strokeWidth={2} />
+                    <Icon size={20} className={isHighlight ? "text-white" : "text-[#FF6A2A]"} strokeWidth={2} />
                   </div>
                 </div>
 
                 <h3 className={`font-[family-name:var(--font-syne)] font-bold mb-2 ${
-                  isHighlight ? "text-xl text-white" : "text-base text-[#1A1209]"
+                  isHighlight ? "text-xl text-white" : "text-base text-[#000000]"
                 }`}>
                   {feature.title}
                 </h3>
                 <p className={`text-sm leading-relaxed flex-1 ${
-                  isHighlight ? "text-white/80" : "text-[#6B6058]"
+                  isHighlight ? "text-white/80" : "text-[#555555]"
                 }`}>
                   {feature.description}
                 </p>

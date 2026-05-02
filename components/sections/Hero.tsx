@@ -28,19 +28,19 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center overflow-hidden bg-[#FAF8F4]"
+      className="relative min-h-screen flex items-center overflow-hidden bg-[#F7F7F7]"
       aria-label="Hero section"
     >
       <div
         className="absolute inset-0 pointer-events-none"
         aria-hidden="true"
-        style={{ background: "radial-gradient(ellipse 80% 60% at 60% 50%, rgba(255,107,0,0.07) 0%, transparent 70%)" }}
+        style={{ background: "radial-gradient(ellipse 80% 60% at 60% 50%, rgba(255,106,42,0.07) 0%, transparent 70%)" }}
       />
       <div
         className="absolute inset-0 pointer-events-none opacity-[0.35]"
         aria-hidden="true"
         style={{
-          backgroundImage: "radial-gradient(circle, rgba(255,107,0,0.25) 1px, transparent 1px)",
+          backgroundImage: "radial-gradient(circle, rgba(255,106,42,0.25) 1px, transparent 1px)",
           backgroundSize: "32px 32px",
         }}
       />
@@ -54,21 +54,21 @@ export default function Hero() {
         >
           <motion.div variants={itemVariants}>
             <Badge>
-              <span className="w-1.5 h-1.5 rounded-full bg-[#FF6B00] animate-pulse-glow inline-block" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[#FF6A2A] animate-pulse-glow inline-block" />
               The All-in-One Ed-Tech-SaaS Platform
             </Badge>
           </motion.div>
 
           <motion.h1
             variants={itemVariants}
-            className="font-[family-name:var(--font-syne)] text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.05] text-[#1A1209]"
+            className="font-[family-name:var(--font-syne)] text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.05] text-[#000000]"
           >
             Your Platform.{" "}
             <span className="block">Your Brand.</span>
             <span className="block"><span className="text-gradient">Your Success.</span></span>
           </motion.h1>
 
-          <motion.p variants={itemVariants} className="text-lg text-[#6B6058] max-w-lg leading-relaxed">
+          <motion.p variants={itemVariants} className="text-lg text-[#555555] max-w-lg leading-relaxed">
             Teach. Engage. Grow. All in One Place. Full LMS, white-label mobile apps, and an AI learning engine — ready in weeks, built for India&apos;s educators.
           </motion.p>
 
@@ -88,22 +88,22 @@ export default function Hero() {
               {["RS", "PM", "AG", "SR"].map((initials, i) => (
                 <div
                   key={initials}
-                  className="w-8 h-8 rounded-full border-2 border-[#FAF8F4] flex items-center justify-center text-[10px] font-bold text-white"
-                  style={{ background: `rgba(255,107,0,${0.6 + i * 0.1})`, zIndex: 4 - i }}
+                  className="w-8 h-8 rounded-full border-2 border-[#F7F7F7] flex items-center justify-center text-[10px] font-bold text-white"
+                  style={{ background: `rgba(255,106,42,${0.6 + i * 0.1})`, zIndex: 4 - i }}
                 >
                   {initials}
                 </div>
               ))}
             </div>
-            <p className="text-sm text-[#6B6058]">
-              <span className="text-[#1A1209] font-semibold">200+</span> institutes already live
+            <p className="text-sm text-[#555555]">
+              <span className="text-[#000000] font-semibold">200+</span> institutes already live
             </p>
           </motion.div>
 
           <motion.div variants={itemVariants} className="flex flex-wrap gap-3 pt-1">
             {["Own Your Brand", "100% Content Security", "All-in-One Platform"].map((t) => (
-              <div key={t} className="flex items-center gap-1.5 text-xs text-[#6B6058] bg-white border border-black/[0.07] px-3 py-1.5 rounded-full shadow-sm">
-                <div className="w-1.5 h-1.5 rounded-full bg-[#FF6B00]" />
+              <div key={t} className="flex items-center gap-1.5 text-xs text-[#555555] bg-white border border-[#E5E5E5] px-3 py-1.5 rounded-full shadow-sm">
+                <div className="w-1.5 h-1.5 rounded-full bg-[#FF6A2A]" />
                 {t}
               </div>
             ))}
@@ -119,7 +119,7 @@ export default function Hero() {
         >
           <div
             className="absolute inset-0 rounded-3xl pointer-events-none"
-            style={{ background: "radial-gradient(ellipse at center, rgba(255,107,0,0.06) 0%, transparent 70%)" }}
+            style={{ background: "radial-gradient(ellipse at center, rgba(255,106,42,0.06) 0%, transparent 70%)" }}
           />
           {!isMobile ? (
             <Canvas
@@ -139,12 +139,12 @@ export default function Hero() {
             <div className="w-full h-full flex items-center justify-center">
               <div className="relative w-64 h-64">
                 <div className="absolute inset-0 rounded-full animate-pulse-glow"
-                  style={{ background: "radial-gradient(circle, rgba(255,107,0,0.3) 0%, transparent 70%)" }}
+                  style={{ background: "radial-gradient(circle, rgba(255,106,42,0.3) 0%, transparent 70%)" }}
                 />
-                <div className="absolute inset-8 rounded-full border-2 border-[#FF6B00]/30 animate-spin-slow" />
+                <div className="absolute inset-8 rounded-full border-2 border-[#FF6A2A]/30 animate-spin-slow" />
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-20 h-20 rounded-full bg-[#FF6B00]/20 border border-[#FF6B00]/50 flex items-center justify-center">
-                    <div className="w-10 h-10 rounded-full bg-[#FF6B00]" />
+                  <div className="w-20 h-20 rounded-full bg-[#FF6A2A]/20 border border-[#FF6A2A]/50 flex items-center justify-center">
+                    <div className="w-10 h-10 rounded-full bg-[#FF6A2A]" />
                   </div>
                 </div>
               </div>
@@ -160,14 +160,14 @@ export default function Hero() {
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
         aria-hidden="true"
       >
-        <span className="text-[10px] tracking-[0.2em] uppercase text-[#6B6058]/60">Scroll</span>
+        <span className="text-[10px] tracking-[0.2em] uppercase text-[#555555]/60">Scroll</span>
         <div className="flex flex-col gap-1 items-center">
           {[0, 1, 2].map((i) => (
             <motion.div
               key={i}
               animate={{ opacity: [0.3, 1, 0.3] }}
               transition={{ duration: 1.4, repeat: Infinity, delay: i * 0.2 }}
-              className="w-0.5 h-1.5 rounded-full bg-[#FF6B00]"
+              className="w-0.5 h-1.5 rounded-full bg-[#FF6A2A]"
             />
           ))}
         </div>

@@ -72,11 +72,11 @@ function ProductCard({ product, index, reversed }: ProductCardProps) {
           <Badge className="mb-4">
             {index === 0 ? "01" : index === 1 ? "02" : "03"} / Platform
           </Badge>
-          <h3 className="font-[family-name:var(--font-syne)] text-3xl md:text-4xl lg:text-5xl font-bold text-[#1A1209] mb-3">
+          <h3 className="font-[family-name:var(--font-syne)] text-3xl md:text-4xl lg:text-5xl font-bold text-[#000000] mb-3">
             {product.name}
           </h3>
-          <p className="text-[#FF6B00] font-semibold mb-4">{product.tagline}</p>
-          <p className="text-[#6B6058] leading-relaxed text-lg">{product.description}</p>
+          <p className="text-[#FF6A2A] font-semibold mb-4">{product.tagline}</p>
+          <p className="text-[#555555] leading-relaxed text-lg">{product.description}</p>
         </div>
 
         <div className="grid grid-cols-2 gap-3">
@@ -85,12 +85,12 @@ function ProductCard({ product, index, reversed }: ProductCardProps) {
             return (
               <div
                 key={feature.text}
-                className="flex items-center gap-3 p-3 rounded-xl bg-white border border-black/[0.07] hover:border-[rgba(255,107,0,0.25)] hover:shadow-[0_2px_12px_rgba(255,107,0,0.08)] transition-all duration-200"
+                className="flex items-center gap-3 p-3 rounded-xl bg-white border border-[#E5E5E5] hover:border-[rgba(255,106,42,0.25)] hover:shadow-[0_2px_12px_rgba(255,106,42,0.08)] transition-all duration-200"
               >
-                <div className="w-8 h-8 rounded-lg bg-[rgba(255,107,0,0.1)] flex items-center justify-center shrink-0">
-                  <Icon size={15} className="text-[#FF6B00]" />
+                <div className="w-8 h-8 rounded-lg bg-[#FFE5D6] flex items-center justify-center shrink-0">
+                  <Icon size={15} className="text-[#FF6A2A]" />
                 </div>
-                <span className="text-sm text-[#1A1209] font-medium">{feature.text}</span>
+                <span className="text-sm text-[#000000] font-medium">{feature.text}</span>
               </div>
             );
           })}
@@ -114,9 +114,9 @@ function ProductCard({ product, index, reversed }: ProductCardProps) {
       >
         <div
           className="absolute -inset-4 rounded-3xl pointer-events-none"
-          style={{ background: "radial-gradient(ellipse at center, rgba(255,107,0,0.06) 0%, transparent 70%)" }}
+          style={{ background: "radial-gradient(ellipse at center, rgba(255,106,42,0.06) 0%, transparent 70%)" }}
         />
-        <div className="relative rounded-2xl overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.12)] border border-black/[0.06]">
+        <div className="relative rounded-2xl overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.12)] border border-[#E5E5E5]">
           <Image
             src={imgSrc}
             alt={product.name}
@@ -133,10 +133,10 @@ function ProductCard({ product, index, reversed }: ProductCardProps) {
 
 export default function Products() {
   return (
-    <section id="products" className="section-padding relative overflow-hidden bg-[#FAF8F4]">
+    <section id="products" className="section-padding relative overflow-hidden bg-[#F7F7F7]">
       <div
         className="absolute inset-0 pointer-events-none"
-        style={{ background: "radial-gradient(ellipse 60% 40% at 50% 0%, rgba(255,107,0,0.04) 0%, transparent 60%)" }}
+        style={{ background: "radial-gradient(ellipse 60% 40% at 50% 0%, rgba(255,106,42,0.04) 0%, transparent 60%)" }}
         aria-hidden="true"
       />
 

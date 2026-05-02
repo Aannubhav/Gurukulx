@@ -30,7 +30,7 @@ export const PRODUCTS = [
       { icon: "GitBranch", text: "Adaptive Learning Paths" },
       { icon: "Plug", text: "Payment Gateway Integration" },
     ],
-    color: "#FF8C21",
+    color: "#FF8547",
   },
   {
     id: "android",
@@ -44,7 +44,7 @@ export const PRODUCTS = [
       { icon: "Palette", text: "Full White-label" },
       { icon: "Fingerprint", text: "Biometric Login" },
     ],
-    color: "#FF8C21",
+    color: "#FF8547",
   },
   {
     id: "ios",
@@ -58,7 +58,7 @@ export const PRODUCTS = [
       { icon: "Layers", text: "Adaptive Revision Plans" },
       { icon: "Mic", text: "AI Doubt Resolution" },
     ],
-    color: "#FF8C21",
+    color: "#FF8547",
   },
 ];
 

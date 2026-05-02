@@ -56,8 +56,8 @@ function ShowcaseObject({ position, type, isSelected, onClick }: ShowcaseObjectP
             <mesh ref={glowRef} position={[0, 0, 0.07]}>
               <planeGeometry args={[1.55, 0.97]} />
               <meshStandardMaterial
-                color="#FF8C21"
-                emissive="#FF8C21"
+                color="#FF8547"
+                emissive="#FF8547"
                 emissiveIntensity={0.8}
                 transparent opacity={0.92}
               />
@@ -73,8 +73,8 @@ function ShowcaseObject({ position, type, isSelected, onClick }: ShowcaseObjectP
             <mesh ref={glowRef} position={[0, 0.05, 0.055]}>
               <planeGeometry args={[0.55, 1.15]} />
               <meshStandardMaterial
-                color="#FF8C21"
-                emissive="#FF8C21"
+                color="#FF8547"
+                emissive="#FF8547"
                 emissiveIntensity={1.0}
                 transparent opacity={0.9}
               />
@@ -90,8 +90,8 @@ function ShowcaseObject({ position, type, isSelected, onClick }: ShowcaseObjectP
             <mesh ref={glowRef} position={[0, 0, 0.05]}>
               <planeGeometry args={[0.52, 1.12]} />
               <meshStandardMaterial
-                color="#FF8C21"
-                emissive="#FF8C21"
+                color="#FF8547"
+                emissive="#FF8547"
                 emissiveIntensity={0.9}
                 transparent opacity={0.9}
               />
@@ -111,7 +111,7 @@ function ShowcaseObject({ position, type, isSelected, onClick }: ShowcaseObjectP
     >
       {getGeometry()}
       <pointLight
-        color="#FF8C21"
+        color="#FF8547"
         intensity={isSelected ? 3 : 1.5}
         distance={4}
         position={[0, 0, 0.8]}
@@ -131,7 +131,7 @@ function CentralLight() {
   return (
     <pointLight
       ref={lightRef}
-      color="#FF8C21"
+      color="#FF8547"
       intensity={2}
       distance={8}
       position={[0, 0, 0]}
@@ -151,7 +151,7 @@ function OrangeGrid() {
   return (
     <mesh ref={ref} rotation={[-Math.PI / 2, 0, 0]} position={[0, -2.5, 0]}>
       <planeGeometry args={[20, 20, 30, 30]} />
-      <meshBasicMaterial color="#FF8C21" wireframe transparent opacity={0.08} />
+      <meshBasicMaterial color="#FF8547" wireframe transparent opacity={0.08} />
     </mesh>
   );
 }
@@ -173,7 +173,7 @@ export default function InteractiveShowcaseScene({ selected, onSelect }: Interac
   return (
     <>
       <ambientLight color="#1a0f05" intensity={0.12} />
-      <pointLight color="#FF8C21" intensity={1.5} position={[0, 5, 3]} />
+      <pointLight color="#FF8547" intensity={1.5} position={[0, 5, 3]} />
       <pointLight color="#FFB366" intensity={0.6} position={[-5, -3, 2]} />
       <CentralLight />
 
@@ -187,7 +187,7 @@ export default function InteractiveShowcaseScene({ selected, onSelect }: Interac
         />
       ))}
 
-      <Particles count={100} spread={10} size={0.018} color="#FF8C21" speed={0.25} />
+      <Particles count={100} spread={10} size={0.018} color="#FF8547" speed={0.25} />
       <OrangeGrid />
 
       <OrbitControls

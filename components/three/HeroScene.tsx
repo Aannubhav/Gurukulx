@@ -29,8 +29,8 @@ function PulsingCore() {
       <mesh ref={meshRef}>
         <sphereGeometry args={[0.35, 32, 32]} />
         <meshStandardMaterial
-          color="#FF6B00"
-          emissive="#FF8C21"
+          color="#FF6A2A"
+          emissive="#FF8547"
           emissiveIntensity={1.0}
           roughness={0.2}
           metalness={0.6}
@@ -40,15 +40,15 @@ function PulsingCore() {
       <mesh scale={1.3}>
         <sphereGeometry args={[0.35, 16, 16]} />
         <meshStandardMaterial
-          color="#FF8C21"
-          emissive="#FF8C21"
+          color="#FF8547"
+          emissive="#FF8547"
           emissiveIntensity={0.3}
           transparent
           opacity={0.15}
           side={THREE.BackSide}
         />
       </mesh>
-      <pointLight ref={lightRef} color="#FF8C21" intensity={2.5} distance={6} />
+      <pointLight ref={lightRef} color="#FF8547" intensity={2.5} distance={6} />
     </group>
   );
 }
@@ -85,14 +85,14 @@ function DeviceLaptop({ angle, radius }: { angle: number; radius: number }) {
         <mesh position={[0, 0, 0.04]}>
           <planeGeometry args={[1.1, 0.7]} />
           <meshStandardMaterial
-            color="#FF8C21"
-            emissive="#FF8C21"
+            color="#FF8547"
+            emissive="#FF8547"
             emissiveIntensity={1.2}
             transparent
             opacity={0.9}
           />
         </mesh>
-        <pointLight color="#FF8C21" intensity={1.5} distance={3} position={[0, 0, 0.5]} />
+        <pointLight color="#FF8547" intensity={1.5} distance={3} position={[0, 0, 0.5]} />
       </group>
     </group>
   );
@@ -120,8 +120,8 @@ function DevicePhone({ angle, radius }: { angle: number; radius: number }) {
       <mesh position={[0, 0, 0.04]}>
         <planeGeometry args={[0.35, 0.72]} />
         <meshStandardMaterial
-          color="#FF8C21"
-          emissive="#FF8C21"
+          color="#FF8547"
+          emissive="#FF8547"
           emissiveIntensity={1.4}
           transparent
           opacity={0.9}
@@ -153,14 +153,14 @@ function DeviceTablet({ angle, radius }: { angle: number; radius: number }) {
       <mesh position={[0, 0, 0.037]}>
         <planeGeometry args={[0.62, 0.84]} />
         <meshStandardMaterial
-          color="#FF8C21"
-          emissive="#FF8C21"
+          color="#FF8547"
+          emissive="#FF8547"
           emissiveIntensity={1.3}
           transparent
           opacity={0.9}
         />
       </mesh>
-      <pointLight color="#FF8C21" intensity={1.3} distance={2.5} position={[0, 0, 0.4]} />
+      <pointLight color="#FF8547" intensity={1.3} distance={2.5} position={[0, 0, 0.4]} />
     </group>
   );
 }
@@ -183,7 +183,7 @@ function WireframeGrid() {
   return (
     <mesh ref={ref} geometry={gridHelper} rotation={[-Math.PI / 2, 0, 0]} position={[0, -1.5, 0]}>
       <meshBasicMaterial
-        color="#FF8C21"
+        color="#FF8547"
         transparent
         opacity={0.12}
         wireframe
@@ -215,10 +215,10 @@ export default function HeroScene({ mouseX, mouseY }: HeroSceneProps) {
     <>
       {/* Lights */}
       <ambientLight color="#1a1008" intensity={0.15} />
-      <pointLight color="#FF8C21" intensity={2.5} position={[4, 3, 2]} />
+      <pointLight color="#FF8547" intensity={2.5} position={[4, 3, 2]} />
       <pointLight color="#FFB366" intensity={0.8} position={[-4, -2, 3]} />
       <spotLight
-        color="#FF8C21"
+        color="#FF8547"
         intensity={3}
         position={[0, 6, 0]}
         angle={0.4}
@@ -236,7 +236,7 @@ export default function HeroScene({ mouseX, mouseY }: HeroSceneProps) {
         <DeviceTablet angle={(Math.PI * 4) / 3} radius={2.1} />
 
         {/* Particles */}
-        <Particles count={80} spread={6} size={0.02} color="#FF8C21" speed={0.4} />
+        <Particles count={80} spread={6} size={0.02} color="#FF8547" speed={0.4} />
         <Particles count={30} spread={4} size={0.035} color="#FFB366" speed={0.25} />
       </group>
 

@@ -16,7 +16,7 @@ export default function Particles({
   count = 120,
   spread = 8,
   size = 0.025,
-  color = "#FF8C21",
+  color = "#FF8547",
   speed = 0.3,
 }: ParticlesProps) {
   const ref = useRef<THREE.Points>(null);

@@ -41,14 +41,14 @@ export default function SectionHeading({
       {eyebrow && (
         <motion.p
           variants={itemVariants}
-          className="text-xs font-semibold tracking-[0.2em] uppercase text-[#FF6B00] mb-4"
+          className="text-xs font-semibold tracking-[0.2em] uppercase text-[#FF6A2A] mb-4"
         >
           {eyebrow}
         </motion.p>
       )}
       <motion.h2
         variants={itemVariants}
-        className="font-[family-name:var(--font-syne)] text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] text-[#1A1209]"
+        className="font-[family-name:var(--font-syne)] text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] text-[#000000]"
       >
         {title}{" "}
         {titleHighlight && (
@@ -59,7 +59,7 @@ export default function SectionHeading({
         <motion.p
           variants={itemVariants}
           className={cn(
-            "mt-5 text-lg text-[#6B6058] leading-relaxed",
+            "mt-5 text-lg text-[#555555] leading-relaxed",
             center ? "max-w-2xl mx-auto" : "max-w-xl"
           )}
         >

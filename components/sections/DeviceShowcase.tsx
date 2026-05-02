@@ -47,12 +47,12 @@ function FeatureItem({ icon: Icon, title, desc, align = "left", index = 0 }: {
       viewport={{ once: true, amount: 0.3 }}
       className={`flex items-start gap-3 ${align === "right" ? "flex-row-reverse text-right" : ""}`}
     >
-      <div className="shrink-0 w-9 h-9 rounded-xl bg-[rgba(255,107,0,0.1)] flex items-center justify-center">
-        <Icon size={16} className="text-[#FF6B00]" />
+      <div className="shrink-0 w-9 h-9 rounded-xl bg-[#FFE5D6] flex items-center justify-center">
+        <Icon size={16} className="text-[#FF6A2A]" />
       </div>
       <div className={align === "right" ? "text-right" : ""}>
-        <p className="text-sm font-semibold text-[#1A1209] leading-snug">{title}</p>
-        <p className="text-xs text-[#6B6058] mt-0.5 leading-relaxed">{desc}</p>
+        <p className="text-sm font-semibold text-[#000000] leading-snug">{title}</p>
+        <p className="text-xs text-[#555555] mt-0.5 leading-relaxed">{desc}</p>
       </div>
     </motion.div>
   );
@@ -62,7 +62,7 @@ function DesktopMockup() {
   return (
     <div className="relative w-full max-w-[560px] mx-auto">
       {/* Monitor bezel */}
-      <div className="relative rounded-2xl bg-[#1A1209] p-2.5 shadow-[0_32px_80px_rgba(0,0,0,0.18)]">
+      <div className="relative rounded-2xl bg-[#000000] p-2.5 shadow-[0_32px_80px_rgba(0,0,0,0.18)]">
         {/* Screen */}
         <div className="rounded-xl overflow-hidden bg-white aspect-[16/10]">
           <Image
@@ -87,9 +87,9 @@ function PhoneMockup() {
   return (
     <div className="relative w-[180px] sm:w-[200px] mx-auto">
       {/* Phone shell */}
-      <div className="relative rounded-[2.5rem] bg-[#1A1209] p-2 shadow-[0_24px_60px_rgba(0,0,0,0.2)]">
+      <div className="relative rounded-[2.5rem] bg-[#000000] p-2 shadow-[0_24px_60px_rgba(0,0,0,0.2)]">
         {/* Notch bar */}
-        <div className="absolute top-4 left-1/2 -translate-x-1/2 w-20 h-4 bg-[#1A1209] rounded-full z-10" />
+        <div className="absolute top-4 left-1/2 -translate-x-1/2 w-20 h-4 bg-[#000000] rounded-full z-10" />
         {/* Screen */}
         <div className="rounded-[2rem] overflow-hidden bg-white aspect-[9/19.5]">
           <Image
@@ -120,14 +120,14 @@ export default function DeviceShowcase() {
           transition={{ duration: 0.6 }}
           className="text-center mb-14"
         >
-          <p className="text-xs font-semibold tracking-[0.2em] uppercase text-[#FF6B00] mb-3">
+          <p className="text-xs font-semibold tracking-[0.2em] uppercase text-[#FF6A2A] mb-3">
             Platform Preview
           </p>
-          <h2 className="font-[family-name:var(--font-syne)] text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1A1209] leading-[1.1]">
+          <h2 className="font-[family-name:var(--font-syne)] text-3xl sm:text-4xl lg:text-5xl font-bold text-[#000000] leading-[1.1]">
             Your Platform. Your Brand.{" "}
             <span className="text-gradient">Your Success.</span>
           </h2>
-          <p className="mt-4 text-base text-[#6B6058] max-w-xl mx-auto leading-relaxed">
+          <p className="mt-4 text-base text-[#555555] max-w-xl mx-auto leading-relaxed">
             Teach. Engage. Grow. All in One Place.
           </p>
         </motion.div>
@@ -209,7 +209,7 @@ export default function DeviceShowcase() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="flex flex-wrap justify-center gap-4 sm:gap-8 pt-8 border-t border-black/[0.06]"
+          className="flex flex-wrap justify-center gap-4 sm:gap-8 pt-8 border-t border-[#E5E5E5]"
         >
           {[
             { icon: "🖥️", label: "Own Your Brand" },
@@ -217,7 +217,7 @@ export default function DeviceShowcase() {
             { icon: "🔒", label: "100% Content Security" },
             { icon: "📊", label: "All-in-One Platform" },
           ].map(({ icon, label }) => (
-            <div key={label} className="flex items-center gap-2 text-sm text-[#6B6058] font-medium">
+            <div key={label} className="flex items-center gap-2 text-sm text-[#555555] font-medium">
               <span>{icon}</span>
               <span>{label}</span>
             </div>
@@ -225,7 +225,7 @@ export default function DeviceShowcase() {
         </motion.div>
 
         {/* CTA tagline */}
-        <p className="text-center mt-6 text-base font-semibold text-[#FF6B00]">
+        <p className="text-center mt-6 text-base font-semibold text-[#FF6A2A]">
           Start Your Journey with GurukulamX Today!
         </p>
       </div>

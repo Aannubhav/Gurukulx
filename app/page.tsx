@@ -10,7 +10,7 @@ import CTASection from "@/components/sections/CTASection";
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen bg-[#FAF8F4]">
+    <div className="flex flex-col min-h-screen bg-[#F7F7F7]">
       <Navbar />
       <main className="flex-1 overflow-x-hidden">
         <Hero />

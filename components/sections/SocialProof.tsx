@@ -5,16 +5,16 @@ import { TRUSTED_COMPANIES } from "@/lib/constants";
 
 export default function SocialProof() {
   return (
-    <section className="py-16 border-y border-black/[0.06] overflow-hidden bg-white" id="about">
+    <section className="py-16 border-y border-[#E5E5E5] overflow-hidden bg-white" id="about">
       <div className="container-custom mb-8 text-center">
         <motion.p
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-xs font-semibold tracking-[0.2em] uppercase text-[#6B6058]"
+          className="text-xs font-semibold tracking-[0.2em] uppercase text-[#555555]"
         >
-          Trusted by <span className="text-[#FF6B00]">200+</span> institutes, coaching centres & EdTech startups
+          Trusted by <span className="text-[#FF6A2A]">200+</span> institutes, coaching centres & EdTech startups
         </motion.p>
       </div>
 
@@ -27,7 +27,7 @@ export default function SocialProof() {
           <div className="flex gap-12 animate-marquee shrink-0">
             {TRUSTED_COMPANIES.map((company, i) => (
               <div key={`${company}-${i}`} className="shrink-0 flex items-center justify-center">
-                <span className="font-[family-name:var(--font-syne)] text-xl font-bold text-[#1A1209]/20 hover:text-[#FF6B00]/70 transition-colors duration-300 cursor-default tracking-tight whitespace-nowrap" style={{ fontWeight: 800 }}>
+                <span className="font-[family-name:var(--font-syne)] text-xl font-bold text-[#000000]/20 hover:text-[#FF6A2A]/70 transition-colors duration-300 cursor-default tracking-tight whitespace-nowrap" style={{ fontWeight: 800 }}>
                   {company}
                 </span>
               </div>
@@ -36,7 +36,7 @@ export default function SocialProof() {
           <div className="flex gap-12 animate-marquee shrink-0" aria-hidden="true">
             {TRUSTED_COMPANIES.map((company, i) => (
               <div key={`${company}-dup-${i}`} className="shrink-0 flex items-center justify-center">
-                <span className="font-[family-name:var(--font-syne)] text-xl font-bold text-[#1A1209]/20 tracking-tight whitespace-nowrap" style={{ fontWeight: 800 }}>
+                <span className="font-[family-name:var(--font-syne)] text-xl font-bold text-[#000000]/20 tracking-tight whitespace-nowrap" style={{ fontWeight: 800 }}>
                   {company}
                 </span>
               </div>
@@ -68,7 +68,7 @@ export default function SocialProof() {
               className="text-center"
             >
               <p className="font-[family-name:var(--font-syne)] text-3xl md:text-4xl font-bold text-gradient mb-1">{value}</p>
-              <p className="text-sm text-[#6B6058]">{label}</p>
+              <p className="text-sm text-[#555555]">{label}</p>
             </motion.div>
           ))}
         </motion.div>

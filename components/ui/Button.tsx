@@ -12,15 +12,15 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant = "primary", size = "md", glow = false, children, ...props }, ref) => {
     const base =
-      "inline-flex items-center justify-center gap-2 font-semibold rounded-xl transition-all duration-300 cursor-pointer select-none focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FF6B00] focus-visible:ring-offset-2 focus-visible:ring-offset-[#FAF8F4] disabled:opacity-50 disabled:pointer-events-none";
+      "inline-flex items-center justify-center gap-2 font-semibold rounded-xl transition-all duration-300 cursor-pointer select-none focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FF6A2A] focus-visible:ring-offset-2 focus-visible:ring-offset-[#F7F7F7] disabled:opacity-50 disabled:pointer-events-none";
 
     const variants = {
       primary:
-        "bg-[#FF6B00] text-white hover:bg-[#FF8C21] active:bg-[#CC5500] hover:scale-[1.03] active:scale-[0.98]",
+        "bg-[#FF6A2A] text-white hover:bg-[#FF8547] active:bg-[#CC3A10] hover:scale-[1.03] active:scale-[0.98]",
       outline:
-        "border-2 border-[#FF6B00] text-[#FF6B00] hover:bg-[#FF6B00] hover:text-white active:bg-[#CC5500] hover:scale-[1.03] active:scale-[0.98]",
+        "border-2 border-[#FF6A2A] text-[#FF6A2A] hover:bg-[#FF6A2A] hover:text-white active:bg-[#CC3A10] hover:scale-[1.03] active:scale-[0.98]",
       ghost:
-        "text-[#6B6058] hover:text-[#FF6B00] hover:bg-[rgba(255,107,0,0.06)] active:bg-[rgba(255,107,0,0.1)]",
+        "text-[#555555] hover:text-[#FF6A2A] hover:bg-[#FFE5D6/70] active:bg-[#FFE5D6]",
     };
 
     const sizes = {
@@ -31,8 +31,8 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 
     const glowClass = glow
       ? variant === "primary"
-        ? "shadow-[0_4px_24px_rgba(255,107,0,0.35)] hover:shadow-[0_6px_36px_rgba(255,107,0,0.5)]"
-        : "shadow-[0_2px_16px_rgba(255,107,0,0.15)] hover:shadow-[0_4px_24px_rgba(255,107,0,0.25)]"
+        ? "shadow-[0_4px_24px_rgba(255,106,42,0.35)] hover:shadow-[0_6px_36px_rgba(255,106,42,0.5)]"
+        : "shadow-[0_2px_16px_rgba(255,106,42,0.15)] hover:shadow-[0_4px_24px_rgba(255,106,42,0.25)]"
       : "";
 
     return (

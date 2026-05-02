@@ -45,8 +45,8 @@ function WebDevice() {
       <mesh ref={screenRef} position={[0, 0, 0.07]}>
         <planeGeometry args={[2.5, 1.52]} />
         <meshStandardMaterial
-          color="#FF8C21"
-          emissive="#FF8C21"
+          color="#FF8547"
+          emissive="#FF8547"
           emissiveIntensity={1.0}
           transparent
           opacity={0.95}
@@ -57,7 +57,7 @@ function WebDevice() {
       <mesh position={[0, 0, 0.08]}>
         <planeGeometry args={[2.5, 1.52]} />
         <meshBasicMaterial
-          color="#FF6B00"
+          color="#FF6A2A"
           wireframe
           transparent
           opacity={0.2}
@@ -65,7 +65,7 @@ function WebDevice() {
       </mesh>
 
       {/* Light rays from screen */}
-      <pointLight color="#FF8C21" intensity={3} distance={5} position={[0, 0, 1]} />
+      <pointLight color="#FF8547" intensity={3} distance={5} position={[0, 0, 1]} />
       <pointLight color="#FFB366" intensity={1.5} distance={4} position={[0, 0, -0.5]} />
     </group>
   );
@@ -102,8 +102,8 @@ function AndroidDevice() {
       <mesh ref={screenRef} position={[0, 0.05, 0.055]}>
         <planeGeometry args={[0.7, 1.45]} />
         <meshStandardMaterial
-          color="#FF8C21"
-          emissive="#FF8C21"
+          color="#FF8547"
+          emissive="#FF8547"
           emissiveIntensity={1.2}
           transparent
           opacity={0.92}
@@ -119,14 +119,14 @@ function AndroidDevice() {
       {/* Home indicator */}
       <mesh position={[0, -0.76, 0.056]}>
         <planeGeometry args={[0.2, 0.02]} />
-        <meshStandardMaterial color="#FF8C21" emissive="#FF8C21" emissiveIntensity={1} transparent opacity={0.8} />
+        <meshStandardMaterial color="#FF8547" emissive="#FF8547" emissiveIntensity={1} transparent opacity={0.8} />
       </mesh>
 
       {/* Orange rim light effect */}
       <RoundedBox args={[0.86, 1.81, 0.08]} radius={0.1}>
         <meshStandardMaterial
-          color="#FF8C21"
-          emissive="#FF8C21"
+          color="#FF8547"
+          emissive="#FF8547"
           emissiveIntensity={0.15}
           transparent
           opacity={0.12}
@@ -135,7 +135,7 @@ function AndroidDevice() {
       </RoundedBox>
 
       {/* Floating particle sparks */}
-      <pointLight color="#FF8C21" intensity={2.5} distance={4} position={[0, 0, 0.8]} />
+      <pointLight color="#FF8547" intensity={2.5} distance={4} position={[0, 0, 0.8]} />
       <pointLight color="#FFB366" intensity={1} distance={3} position={[-1, 0.5, 0]} />
     </group>
   );
@@ -179,8 +179,8 @@ function IOSDevice() {
       <mesh ref={screenRef} position={[0, -0.02, 0.05]}>
         <planeGeometry args={[0.66, 1.42]} />
         <meshStandardMaterial
-          color="#FF8C21"
-          emissive="#FF8C21"
+          color="#FF8547"
+          emissive="#FF8547"
           emissiveIntensity={1.1}
           transparent
           opacity={0.93}
@@ -190,14 +190,14 @@ function IOSDevice() {
       {/* Home bar */}
       <mesh position={[0, -0.72, 0.051]}>
         <planeGeometry args={[0.22, 0.025]} />
-        <meshStandardMaterial color="#FF8C21" emissive="#FF8C21" emissiveIntensity={1.2} transparent opacity={0.7} />
+        <meshStandardMaterial color="#FF8547" emissive="#FF8547" emissiveIntensity={1.2} transparent opacity={0.7} />
       </mesh>
 
       {/* Orange internal glow */}
       <RoundedBox args={[0.78, 1.73, 0.07]} radius={0.12}>
         <meshStandardMaterial
-          color="#FF8C21"
-          emissive="#FF8C21"
+          color="#FF8547"
+          emissive="#FF8547"
           emissiveIntensity={0.1}
           transparent
           opacity={0.08}
@@ -209,15 +209,15 @@ function IOSDevice() {
       <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -1.1, 0]}>
         <planeGeometry args={[1.2, 0.6]} />
         <meshStandardMaterial
-          color="#FF8C21"
-          emissive="#FF8C21"
+          color="#FF8547"
+          emissive="#FF8547"
           emissiveIntensity={0.08}
           transparent
           opacity={0.12}
         />
       </mesh>
 
-      <pointLight color="#FF8C21" intensity={2.8} distance={4} position={[0, 0, 0.8]} />
+      <pointLight color="#FF8547" intensity={2.8} distance={4} position={[0, 0, 0.8]} />
       <pointLight color="#FFB366" intensity={1.2} distance={3} position={[1, -0.5, 0]} />
     </group>
   );
@@ -227,7 +227,7 @@ export default function ProductDevice({ type }: ProductDeviceProps) {
   return (
     <>
       <ambientLight color="#1a0f05" intensity={0.12} />
-      <pointLight color="#FF8C21" intensity={2} position={[3, 4, 3]} />
+      <pointLight color="#FF8547" intensity={2} position={[3, 4, 3]} />
       <pointLight color="#FFB366" intensity={0.8} position={[-3, -2, 2]} />
 
       {type === "web" && <WebDevice />}

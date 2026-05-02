@@ -32,13 +32,13 @@ export default function Testimonials() {
   const current = TESTIMONIALS[active];
 
   return (
-    <section className="section-padding relative overflow-hidden bg-[#FAF8F4]">
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[rgba(255,107,0,0.15)] to-transparent" />
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[rgba(255,107,0,0.15)] to-transparent" />
+    <section className="section-padding relative overflow-hidden bg-[#F7F7F7]">
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[rgba(255,106,42,0.15)] to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[rgba(255,106,42,0.15)] to-transparent" />
       <div
         className="absolute inset-0 pointer-events-none"
         aria-hidden="true"
-        style={{ background: "radial-gradient(ellipse 50% 60% at 50% 50%, rgba(255,107,0,0.04) 0%, transparent 70%)" }}
+        style={{ background: "radial-gradient(ellipse 50% 60% at 50% 50%, rgba(255,106,42,0.04) 0%, transparent 70%)" }}
       />
 
       <div className="container-custom">
@@ -55,8 +55,8 @@ export default function Testimonials() {
           onMouseEnter={() => setPaused(true)}
           onMouseLeave={() => setPaused(false)}
         >
-          <div className="relative rounded-2xl p-7 sm:p-10 bg-white border border-black/[0.07] shadow-sm overflow-hidden">
-            <Quote size={40} className="text-[#FF6B00]/20 mb-6" />
+          <div className="relative rounded-2xl p-7 sm:p-10 bg-white border border-[#E5E5E5] shadow-sm overflow-hidden">
+            <Quote size={40} className="text-[#FF6A2A]/20 mb-6" />
 
             <AnimatePresence mode="wait">
               <motion.div
@@ -66,24 +66,24 @@ export default function Testimonials() {
                 exit={{ opacity: 0, y: -16 }}
                 transition={{ duration: 0.4 }}
               >
-                <p className="text-xl sm:text-2xl text-[#1A1209] leading-relaxed font-medium mb-8">
+                <p className="text-xl sm:text-2xl text-[#000000] leading-relaxed font-medium mb-8">
                   &ldquo;{current.quote}&rdquo;
                 </p>
 
                 <div className="flex items-center gap-4">
                   <div
                     className="w-12 h-12 rounded-full flex items-center justify-center text-sm font-bold text-white shrink-0"
-                    style={{ background: "linear-gradient(135deg, #FF8C21, #FF6B00)" }}
+                    style={{ background: "linear-gradient(135deg, #FF8547, #FF6A2A)" }}
                   >
                     {current.avatar}
                   </div>
                   <div>
-                    <p className="font-semibold text-[#1A1209]">{current.author}</p>
-                    <p className="text-sm text-[#6B6058]">{current.title}</p>
+                    <p className="font-semibold text-[#000000]">{current.author}</p>
+                    <p className="text-sm text-[#555555]">{current.title}</p>
                   </div>
                   <div className="ml-auto flex gap-1">
                     {[...Array(5)].map((_, i) => (
-                      <span key={i} className="text-[#FF6B00] text-sm">★</span>
+                      <span key={i} className="text-[#FF6A2A] text-sm">★</span>
                     ))}
                   </div>
                 </div>
@@ -98,7 +98,7 @@ export default function Testimonials() {
                     key={i}
                     onClick={() => setActive(i)}
                     className={`h-1.5 rounded-full transition-all duration-300 ${
-                      i === active ? "w-6 bg-[#FF6B00]" : "w-1.5 bg-black/[0.12]"
+                      i === active ? "w-6 bg-[#FF6A2A]" : "w-1.5 bg-black/[0.12]"
                     }`}
                   />
                 ))}
@@ -106,13 +106,13 @@ export default function Testimonials() {
               <div className="flex gap-2">
                 <button
                   onClick={prev}
-                  className="w-9 h-9 rounded-full border border-black/[0.1] flex items-center justify-center text-[#6B6058] hover:text-[#FF6B00] hover:border-[rgba(255,107,0,0.3)] transition-all"
+                  className="w-9 h-9 rounded-full border border-[#E5E5E5] flex items-center justify-center text-[#555555] hover:text-[#FF6A2A] hover:border-[rgba(255,106,42,0.3)] transition-all"
                 >
                   <ChevronLeft size={16} />
                 </button>
                 <button
                   onClick={next}
-                  className="w-9 h-9 rounded-full border border-black/[0.1] flex items-center justify-center text-[#6B6058] hover:text-[#FF6B00] hover:border-[rgba(255,107,0,0.3)] transition-all"
+                  className="w-9 h-9 rounded-full border border-[#E5E5E5] flex items-center justify-center text-[#555555] hover:text-[#FF6A2A] hover:border-[rgba(255,106,42,0.3)] transition-all"
                 >
                   <ChevronRight size={16} />
                 </button>
