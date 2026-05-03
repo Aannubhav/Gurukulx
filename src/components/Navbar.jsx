@@ -27,7 +27,7 @@ export default function Navbar() {
       <header className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}>
         <div className="container navbar__inner">
           <Link to="/" className="navbar__logo" onClick={close}>
-            <img src={`${import.meta.env.BASE_URL}images/logo.png`} alt="GurukulamX" height="36" />
+            <img src={`${import.meta.env.BASE_URL}images/logo.png`} alt="GurukulamX" height="52" />
           </Link>
 
           <nav className="navbar__links" aria-label="Main navigation">
