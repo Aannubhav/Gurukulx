@@ -19,56 +19,56 @@ export const TRUSTED = [
 
 export const FEATURES = [
   {
-    icon: '📚',
+    icon: 'bookOpen',
     title: 'Course & Batch Builder',
     description: 'Build unlimited courses, live batches, and recorded content with a drag-and-drop editor in minutes.',
     highlight: true,
   },
   {
-    icon: '🤖',
+    icon: 'brain',
     title: 'MCQ Automation Engine',
     description: 'Auto-generate, shuffle, and evaluate MCQs with AI. Reduce manual test-paper effort by 90%.',
     highlight: true,
   },
   {
-    icon: '🎙️',
+    icon: 'mic',
     title: 'AI Voice Agent',
     description: 'Always-on voice agent qualifies leads, answers FAQs, and books demos in your students\' language — 24×7.',
     highlight: true,
   },
   {
-    icon: '📈',
+    icon: 'trending',
     title: 'AI Marketing Service',
     description: 'Every lead tracked end-to-end — capture, score, nurture, and convert. Maximise output from every rupee spent on ads.',
     highlight: true,
   },
   {
-    icon: '📊',
+    icon: 'chart',
     title: 'Revenue Analytics',
     description: 'Real-time GMV, enrollment funnels, drop-off tracking, and student LTV — all in one dashboard.',
   },
   {
-    icon: '🎨',
+    icon: 'layout',
     title: 'White-label Branding',
     description: 'Your logo, colors, domain, and app name. Students never see GurukulamX — they see your brand.',
   },
   {
-    icon: '⚡',
+    icon: 'zap',
     title: 'Adaptive Learning AI',
     description: "AI that personalises every student's learning path based on performance and behavioral data.",
   },
   {
-    icon: '🔒',
+    icon: 'shield',
     title: 'DRM Content Protection',
     description: 'Watermarking, screen-recording block, and encrypted streaming to protect your premium content.',
   },
   {
-    icon: '👥',
+    icon: 'users',
     title: 'Student CRM',
     description: 'Full student lifecycle — leads, onboarding, progress tracking, renewals, and re-engagement.',
   },
   {
-    icon: '🌐',
+    icon: 'globe',
     title: 'Multi-language Support',
     description: 'Serve students in Hindi, Tamil, Telugu, Kannada, and 10+ regional languages out of the box.',
   },

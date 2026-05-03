@@ -1,4 +1,5 @@
 import { FEATURES } from '../data/constants'
+import Icon from './Icon'
 import './Features.css'
 
 export default function Features() {
@@ -24,7 +25,7 @@ export default function Features() {
               className={`features__card card ${f.highlight ? 'features__card--highlight' : ''}`}
             >
               <div className={`features__icon ${f.highlight ? 'features__icon--light' : ''}`}>
-                {f.icon}
+                <Icon name={f.icon} size={20} stroke={1.75} />
               </div>
               <h3 className={`features__title ${f.highlight ? 'features__title--light' : ''}`}>
                 {f.title}
