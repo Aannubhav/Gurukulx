@@ -5,7 +5,7 @@
 .features__grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: var(--space-3);
+  gap: 20px;
   align-items: start;
 }
 
@@ -16,7 +16,7 @@
   gap: 12px;
 }
 
-/* Highlight card spans 2 cols */
+/* Highlight card spans 2 cols — only 2 of these so they fill the top row */
 .features__card--highlight {
   grid-column: span 2;
   background: linear-gradient(135deg, #FF6A2A, #FF8547);

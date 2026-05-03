@@ -1,16 +1,7 @@
-import { useState } from 'react'
 import Icon from './Icon'
 import './CTASection.css'
 
 export default function CTASection() {
-  const [email, setEmail] = useState('')
-  const [sent, setSent] = useState(false)
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    if (email.trim()) setSent(true)
-  }
-
   return (
     <section className="cta section" id="cta">
       <div className="cta__blob" />
@@ -28,30 +19,6 @@ export default function CTASection() {
           Join 200+ institutes and coaching centres already teaching, scaling, and earning
           under their own brand — powered by GurukulamX.
         </p>
-
-        {!sent ? (
-          <form className="cta__form" onSubmit={handleSubmit}>
-            <div className="cta__input-wrap">
-              <Icon name="mail" size={16} className="cta__input-icon" />
-              <input
-                type="email"
-                value={email}
-                onChange={e => setEmail(e.target.value)}
-                placeholder="you@institute.com"
-                required
-                className="cta__input"
-              />
-            </div>
-            <button type="submit" className="btn btn--primary">
-              Get Started <Icon name="arrowRight" size={14} />
-            </button>
-          </form>
-        ) : (
-          <div className="cta__success">
-            <span className="cta__success-check">✓</span>
-            We'll reach out to <strong>{email}</strong> shortly!
-          </div>
-        )}
 
         <div className="cta__actions">
           <a href="#contact" className="btn btn--primary btn--lg">

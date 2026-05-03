@@ -34,13 +34,13 @@ export const FEATURES = [
     icon: 'mic',
     title: 'AI Voice Agent',
     description: 'Always-on voice agent qualifies leads, answers FAQs, and books demos in your students\' language — 24×7.',
-    highlight: true,
+    highlight: false,
   },
   {
     icon: 'trending',
     title: 'AI Marketing Service',
     description: 'Every lead tracked end-to-end — capture, score, nurture, and convert. Maximise output from every rupee spent on ads.',
-    highlight: true,
+    highlight: false,
   },
   {
     icon: 'chart',

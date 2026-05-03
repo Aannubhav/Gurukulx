@@ -1,3 +1,4 @@
+import Icon from './Icon'
 import './Showcase.css'
 
 export default function Showcase() {
@@ -38,13 +39,13 @@ export default function Showcase() {
         {/* Trust strip */}
         <div className="showcase__trust">
           {[
-            { icon: '🖥️', label: 'Own Your Brand' },
-            { icon: '👥', label: 'Teach. Engage. Grow.' },
-            { icon: '🔒', label: '100% Content Security' },
-            { icon: '📊', label: 'All-in-One Platform' },
+            { icon: 'layout',  label: 'Own Your Brand' },
+            { icon: 'users',   label: 'Teach. Engage. Grow.' },
+            { icon: 'shield',  label: '100% Content Security' },
+            { icon: 'chart',   label: 'All-in-One Platform' },
           ].map(({ icon, label }) => (
             <span key={label} className="showcase__trust-item">
-              <span>{icon}</span>
+              <Icon name={icon} size={16} stroke={1.8} style={{ color: 'var(--color-primary)', flexShrink: 0 }} />
               <span>{label}</span>
             </span>
           ))}
