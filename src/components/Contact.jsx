@@ -1,8 +1,12 @@
 import { useState } from 'react'
 import Icon from './Icon'
+import { useLanguage } from '../contexts/LanguageContext'
+import { translations } from '../data/translations'
 import './Contact.css'
 
 export default function Contact() {
+  const { lang } = useLanguage()
+  const t = translations[lang].contact
   const [form, setForm] = useState({
     name: '', email: '', phone: '', institute: '',
     students: '0-500', interest: 'Starter', message: '',
@@ -24,20 +28,18 @@ export default function Contact() {
       <div className="container contact__inner">
         {/* Left — info */}
         <div className="contact__info">
-          <p className="contact__eyebrow">Contact</p>
+          <p className="contact__eyebrow">{t.label}</p>
           <h2 className="section-heading">
-            Let's talk about{' '}
-            <em className="text-orange" style={{ fontStyle: 'italic', fontWeight: 400 }}>your platform.</em>
+            {t.heading}{' '}
+            <em className="text-orange" style={{ fontStyle: 'italic', fontWeight: 400 }}>{t.accent}</em>
           </h2>
-          <p className="contact__sub">
-            Tell us about your institute and what you'd like to build. We'll get back within one business day with a tailored demo.
-          </p>
+          <p className="contact__sub">{t.sub}</p>
 
           <div className="contact__details">
             {[
-              { icon: 'mail',  label: 'Email', value: 'hello@gurukulamx.com' },
-              { icon: 'users', label: 'Sales', value: '+91 90211 11590' },
-              { icon: 'globe', label: 'HQ',    value: 'Noida, India' },
+              { icon: 'mail',  ...t.details[0] },
+              { icon: 'users', ...t.details[1] },
+              { icon: 'globe', ...t.details[2] },
             ].map(c => (
               <div key={c.label} className="contact__detail">
                 <div className="contact__detail-icon">
@@ -54,11 +56,9 @@ export default function Contact() {
           <div className="contact__callout">
             <div className="contact__callout-head">
               <Icon name="zap" size={14} style={{ color: 'var(--color-primary)' }} />
-              <span>Free 30-min consultation</span>
+              <span>{t.callout.head}</span>
             </div>
-            <p>
-              Walk through your needs with a product expert. No commitment, no sales pitch — just a clear plan for what your platform could look like.
-            </p>
+            <p>{t.callout.body}</p>
           </div>
         </div>
 
@@ -71,22 +71,22 @@ export default function Contact() {
               </div>
               <h3>Thanks, {form.name.split(' ')[0] || 'there'}!</h3>
               <p>
-                We've got your message and will reach out at{' '}
-                <strong>{form.email}</strong> within one business day.
+                {t.form.success}{' '}
+                <strong>{form.email}</strong> {t.form.successEnd}
               </p>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="contact__form">
               <div className="contact__form-row">
                 <div className="contact__field">
-                  <label>Your name</label>
+                  <label>{t.form.name}</label>
                   <input
                     type="text" required placeholder="Rajiv Sharma"
                     value={form.name} onChange={e => update('name', e.target.value)}
                   />
                 </div>
                 <div className="contact__field">
-                  <label>Email</label>
+                  <label>{t.form.email}</label>
                   <input
                     type="email" required placeholder="you@institute.com"
                     value={form.email} onChange={e => update('email', e.target.value)}
@@ -95,14 +95,14 @@ export default function Contact() {
               </div>
               <div className="contact__form-row">
                 <div className="contact__field">
-                  <label>Phone</label>
+                  <label>{t.form.phone}</label>
                   <input
                     type="tel" placeholder="+91 98765 43210"
                     value={form.phone} onChange={e => update('phone', e.target.value)}
                   />
                 </div>
                 <div className="contact__field">
-                  <label>Institute / Organisation</label>
+                  <label>{t.form.institute}</label>
                   <input
                     type="text" placeholder="ClearIAS Academy"
                     value={form.institute} onChange={e => update('institute', e.target.value)}
@@ -111,7 +111,7 @@ export default function Contact() {
               </div>
               <div className="contact__form-row">
                 <div className="contact__field">
-                  <label>Current student count</label>
+                  <label>{t.form.students}</label>
                   <select value={form.students} onChange={e => update('students', e.target.value)}>
                     <option>0-500</option>
                     <option>500-2,000</option>
@@ -120,7 +120,7 @@ export default function Contact() {
                   </select>
                 </div>
                 <div className="contact__field">
-                  <label>Interested in</label>
+                  <label>{t.form.interest}</label>
                   <select value={form.interest} onChange={e => update('interest', e.target.value)}>
                     <option>Starter</option>
                     <option>Professional</option>
@@ -130,14 +130,14 @@ export default function Contact() {
                 </div>
               </div>
               <div className="contact__field">
-                <label>Message (optional)</label>
+                <label>{t.form.message}</label>
                 <textarea
                   rows={3} placeholder="Tell us about your platform goals..."
                   value={form.message} onChange={e => update('message', e.target.value)}
                 />
               </div>
               <button type="submit" className="btn btn--primary btn--lg contact__submit">
-                Send message <Icon name="arrowRight" size={16} />
+                {t.form.submit} <Icon name="arrowRight" size={16} />
               </button>
             </form>
           )}

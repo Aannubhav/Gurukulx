@@ -1,8 +1,12 @@
 import { useState } from 'react'
 import { FOOTER_LINKS } from '../data/constants'
+import { useLanguage } from '../contexts/LanguageContext'
+import { translations } from '../data/translations'
 import './Footer.css'
 
 export default function Footer() {
+  const { lang } = useLanguage()
+  const t = translations[lang].footer
   const [email, setEmail] = useState('')
 
   return (
@@ -14,10 +18,7 @@ export default function Footer() {
             <a href="#" className="footer__logo">
               <img src={`${import.meta.env.BASE_URL}images/logo.png`} alt="GurukulamX" height="36" />
             </a>
-            <p className="footer__brand-desc">
-              Full LMS, mobile apps, and AI learning engine — all under your brand.
-              Built for India's coaching institutes and EdTech startups.
-            </p>
+            <p className="footer__brand-desc">{t.desc}</p>
 
             <div className="footer__social">
               {['𝕏', '🌐', '✉'].map((icon, i) => (
@@ -28,7 +29,7 @@ export default function Footer() {
             </div>
 
             <div className="footer__newsletter">
-              <p className="footer__newsletter-label">Stay in the loop</p>
+              <p className="footer__newsletter-label">{t.newsletter}</p>
               <form className="footer__newsletter-form" onSubmit={e => { e.preventDefault() }}>
                 <input
                   type="email"
@@ -38,7 +39,7 @@ export default function Footer() {
                   className="footer__newsletter-input"
                 />
                 <button type="submit" className="btn btn--primary btn--sm">
-                  Subscribe
+                  {t.subscribe}
                 </button>
               </form>
             </div>
@@ -62,8 +63,8 @@ export default function Footer() {
 
       <div className="footer__bottom">
         <div className="container footer__bottom-inner">
-          <p>© {new Date().getFullYear()} GurukulamX · Nexus Micro Technologies. All rights reserved.</p>
-          <p>Built with ♥ for India's EdTech builders</p>
+          <p>{t.rights.replace('{year}', new Date().getFullYear())}</p>
+          <p>{t.tagline}</p>
         </div>
       </div>
     </footer>

@@ -1,21 +1,11 @@
 import { useState, useEffect } from 'react'
 import Icon from './Icon'
+import { useLanguage } from '../contexts/LanguageContext'
+import { translations } from '../data/translations'
 import './Hero.css'
 
-const HERO_LEFT = [
-  { icon: 'rocket',    title: 'Launch Your Online Academy',    desc: 'Create & sell courses, cohorts & programs' },
-  { icon: 'play',      title: 'Live Classes & Webinars',       desc: 'Engage your audience in real-time' },
-  { icon: 'check',     title: 'Test Series & Assessments',     desc: 'Create tests, quizzes & assignments' },
-  { icon: 'bookOpen',  title: 'E-books & Digital Products',    desc: 'Share knowledge in multiple formats' },
-  { icon: 'mic',       title: 'Podcasts',                      desc: 'Monetize your audio content' },
-]
-const HERO_RIGHT = [
-  { icon: 'users',     title: 'Communities & Memberships',     desc: 'Build loyal communities & recurring revenue' },
-  { icon: 'card',      title: 'Merchandise',                   desc: 'Sell branded products' },
-  { icon: 'trending',  title: 'Multiple Revenue Streams',      desc: 'Courses, subscriptions, products & more' },
-  { icon: 'plug',      title: 'Third Party Integrations',      desc: 'Connect with tools you love' },
-  { icon: 'shield',    title: 'Secure & Reliable',             desc: '100% content security & data protection' },
-]
+const LEFT_ICONS  = ['rocket', 'play', 'check', 'bookOpen', 'mic']
+const RIGHT_ICONS = ['users', 'card', 'trending', 'plug', 'shield']
 
 const AI_CASES = [
   { icon: 'brain',    label: 'AI generated', value: '240 MCQs',       hint: 'in 12 sec' },
@@ -221,6 +211,13 @@ function MonitorMockup() {
 }
 
 export default function Hero() {
+  const { lang } = useLanguage()
+  const t = translations[lang].hero
+  const PILL_ICONS = ['layout', 'users', 'shield', 'chart']
+
+  const heroLeft  = t.left.map((it, i) => ({ icon: LEFT_ICONS[i],  ...it }))
+  const heroRight = t.right.map((it, i) => ({ icon: RIGHT_ICONS[i], ...it }))
+
   return (
     <section className="hero" id="hero">
       <div className="hero__blob hero__blob--1" />
@@ -233,20 +230,19 @@ export default function Hero() {
         <div className="hero__title-block">
           <div className="hero__badge-pill">
             <span className="hero__pulse" />
-            The All-in-One Ed-Tech SaaS Platform
+            {t.badge}
           </div>
           <h1 className="hero__headline">
-            Your Platform. Your Brand.{' '}
-            <em className="hero__accent">Your Success.</em>
+            {t.headline}{' '}
+            <em className="hero__accent">{t.accent}</em>
           </h1>
-          <p className="hero__sub">Teach. Engage. Grow. All in One Place.</p>
+          <p className="hero__sub">{t.sub}</p>
         </div>
 
         {/* Orbital row */}
         <div className="hero__orbital">
-          {/* Left callouts */}
           <div className="hero__orbital-col hero__orbital-col--left">
-            {HERO_LEFT.map((it) => (
+            {heroLeft.map((it) => (
               <FeatureCallout key={it.title} side="left" item={it} />
             ))}
             <svg className="hero__connector hero__connector--left" preserveAspectRatio="none">
@@ -256,9 +252,8 @@ export default function Hero() {
 
           <MonitorMockup />
 
-          {/* Right callouts */}
           <div className="hero__orbital-col hero__orbital-col--right">
-            {HERO_RIGHT.map((it) => (
+            {heroRight.map((it) => (
               <FeatureCallout key={it.title} side="right" item={it} />
             ))}
             <svg className="hero__connector hero__connector--right" preserveAspectRatio="none">
@@ -269,29 +264,24 @@ export default function Hero() {
 
         {/* Footer pill bar */}
         <div className="hero__pillbar">
-          {[
-            { icon: 'layout', label: 'Own Your Brand' },
-            { icon: 'users',  label: 'Teach. Engage. Grow.' },
-            { icon: 'shield', label: '100% Content Security' },
-            { icon: 'chart',  label: 'All-in-One Platform' },
-          ].map(p => (
-            <div key={p.label} className="hero__pillbar-item">
-              <Icon name={p.icon} size={15} stroke={1.8} style={{ color: '#FF6A2A' }} />
-              <span>{p.label}</span>
+          {t.pills.map((label, i) => (
+            <div key={label} className="hero__pillbar-item">
+              <Icon name={PILL_ICONS[i]} size={15} stroke={1.8} style={{ color: '#FF6A2A' }} />
+              <span>{label}</span>
             </div>
           ))}
         </div>
 
         {/* CTA */}
         <div className="hero__cta-block">
-          <p className="hero__cta-tagline">Start Your Journey with GurukulamX Today!</p>
+          <p className="hero__cta-tagline">{t.tagline}</p>
           <div className="hero__ctas">
             <a href="#contact" className="btn btn--primary btn--lg">
-              Book a Free Demo <Icon name="arrowRight" size={16} />
+              {t.cta1} <Icon name="arrowRight" size={16} />
             </a>
             <a href="#showcase" className="btn btn--outline btn--lg">
               <Icon name="play" size={14} />
-              Watch Demo
+              {t.cta2}
             </a>
           </div>
         </div>

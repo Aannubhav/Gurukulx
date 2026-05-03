@@ -1,8 +1,12 @@
 import { useState, useEffect, useRef } from 'react'
 import { TESTIMONIALS } from '../data/constants'
+import { useLanguage } from '../contexts/LanguageContext'
+import { translations } from '../data/translations'
 import './Testimonials.css'
 
 export default function Testimonials() {
+  const { lang } = useLanguage()
+  const tt = translations[lang].testimonials
   const [active, setActive] = useState(0)
   const [paused, setPaused] = useState(false)
   const timer = useRef(null)
@@ -22,13 +26,11 @@ export default function Testimonials() {
     <section className="testimonials section section--gray" id="testimonials">
       <div className="container">
         <div className="text-center testimonials__header">
-          <p className="section-label">Social Proof</p>
+          <p className="section-label">{tt.label}</p>
           <h2 className="section-heading">
-            What Our <span className="text-orange">Customers Say</span>
+            {tt.heading} <span className="text-orange">{tt.accent}</span>
           </h2>
-          <p className="section-subtext">
-            Here's what institute founders and EdTech builders say about GurukulamX.
-          </p>
+          <p className="section-subtext">{tt.sub}</p>
         </div>
 
         <div

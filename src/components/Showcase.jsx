@@ -1,19 +1,24 @@
 import Icon from './Icon'
+import { useLanguage } from '../contexts/LanguageContext'
+import { translations } from '../data/translations'
 import './Showcase.css'
 
+const TRUST_ICONS = ['layout', 'users', 'shield', 'chart']
+
 export default function Showcase() {
+  const { lang } = useLanguage()
+  const t = translations[lang].showcase
+
   return (
     <section className="showcase section section--white" id="showcase">
       <div className="container">
         <div className="text-center showcase__header">
-          <p className="section-label">Platform Preview</p>
+          <p className="section-label">{t.label}</p>
           <h2 className="section-heading">
-            Your Platform. Your Brand.{' '}
-            <span className="text-orange">Your Success.</span>
+            {t.heading}{' '}
+            <span className="text-orange">{t.accent}</span>
           </h2>
-          <p className="section-subtext">
-            Teach. Engage. Grow. — Full LMS, mobile apps, AI engine. All under your brand.
-          </p>
+          <p className="section-subtext">{t.sub}</p>
         </div>
 
         {/* Desktop image */}
@@ -38,14 +43,9 @@ export default function Showcase() {
 
         {/* Trust strip */}
         <div className="showcase__trust">
-          {[
-            { icon: 'layout',  label: 'Own Your Brand' },
-            { icon: 'users',   label: 'Teach. Engage. Grow.' },
-            { icon: 'shield',  label: '100% Content Security' },
-            { icon: 'chart',   label: 'All-in-One Platform' },
-          ].map(({ icon, label }) => (
+          {translations[lang].hero.pills.map((label, i) => (
             <span key={label} className="showcase__trust-item">
-              <Icon name={icon} size={16} stroke={1.8} style={{ color: 'var(--color-primary)', flexShrink: 0 }} />
+              <Icon name={TRUST_ICONS[i]} size={16} stroke={1.8} style={{ color: 'var(--color-primary)', flexShrink: 0 }} />
               <span>{label}</span>
             </span>
           ))}
