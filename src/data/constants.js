@@ -1,8 +1,8 @@
 export const NAV_LINKS = [
-  { label: 'Platform', href: '#showcase', internal: false },
-  { label: 'Features', href: '#features', internal: false },
-  { label: 'Pricing', href: '#pricing', internal: false },
-  { label: 'Contact', href: '#contact', internal: false },
+  { label: 'Platform', href: '#showcase' },
+  { label: 'Features', href: '#features' },
+  { label: 'Pricing',  href: '#pricing'  },
+  { label: 'Contact',  href: '#contact'  },
 ]
 
 export const STATS = [
