@@ -26,7 +26,7 @@ export default function Navbar() {
     <header className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}>
       <div className="container navbar__inner">
         <Link to="/" className="navbar__logo" onClick={close}>
-          <img src="/images/logo.png" alt="GurukulamX" height="36" />
+          <img src={`${import.meta.env.BASE_URL}images/logo.png`} alt="GurukulamX" height="36" />
         </Link>
 
         <nav className="navbar__links" aria-label="Main navigation">
@@ -61,7 +61,7 @@ export default function Navbar() {
       {/* Mobile drawer */}
       <div className={`navbar__drawer ${menuOpen ? 'navbar__drawer--open' : ''}`}>
         <div className="navbar__drawer-inner">
-          <img src="/images/logo.png" alt="GurukulamX" height="32" className="navbar__drawer-logo" />
+          <img src={`${import.meta.env.BASE_URL}images/logo.png`} alt="GurukulamX" height="32" className="navbar__drawer-logo" />
           <nav>
             <Link to="/" className="navbar__drawer-link" onClick={close}>Home</Link>
             {NAV_LINKS.map(({ label, href }) => (

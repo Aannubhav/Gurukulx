@@ -88,7 +88,7 @@ function DashboardScreen() {
       {/* Sidebar */}
       <div className="hero__dash-sidebar">
         <div className="hero__dash-logo">
-          <img src="/images/logo.png" alt="GurukulamX" />
+          <img src={`${import.meta.env.BASE_URL}images/logo.png`} alt="GurukulamX" />
         </div>
         {SIDEBAR_ITEMS.map((s) => (
           <div key={s.label} className={`hero__dash-nav ${s.active ? 'hero__dash-nav--active' : ''}`}>

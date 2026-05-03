@@ -18,7 +18,7 @@ export default function Showcase() {
         {/* Desktop image */}
         <div className="showcase__device showcase__device--desktop">
           <img
-            src="/images/desktop-mockup.png"
+            src={`${import.meta.env.BASE_URL}images/desktop-mockup.png`}
             alt="GurukulamX Platform — Desktop"
             className="showcase__img"
             loading="lazy"
@@ -28,7 +28,7 @@ export default function Showcase() {
         {/* Mobile image */}
         <div className="showcase__device showcase__device--mobile">
           <img
-            src="/images/mobile-mockup.png"
+            src={`${import.meta.env.BASE_URL}images/mobile-mockup.png`}
             alt="GurukulamX Platform — Mobile"
             className="showcase__img"
             loading="lazy"

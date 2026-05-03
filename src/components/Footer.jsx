@@ -12,7 +12,7 @@ export default function Footer() {
           {/* Brand col */}
           <div className="footer__brand">
             <a href="#" className="footer__logo">
-              <img src="/images/logo.png" alt="GurukulamX" height="36" />
+              <img src={`${import.meta.env.BASE_URL}images/logo.png`} alt="GurukulamX" height="36" />
             </a>
             <p className="footer__brand-desc">
               Full LMS, mobile apps, and AI learning engine — all under your brand.
