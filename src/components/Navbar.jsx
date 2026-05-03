@@ -23,42 +23,44 @@ export default function Navbar() {
   }
 
   return (
-    <header className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}>
-      <div className="container navbar__inner">
-        <Link to="/" className="navbar__logo" onClick={close}>
-          <img src={`${import.meta.env.BASE_URL}images/logo.png`} alt="GurukulamX" height="36" />
-        </Link>
-
-        <nav className="navbar__links" aria-label="Main navigation">
-          <Link
-            to="/"
-            className={`navbar__link ${isHome ? 'navbar__link--active' : ''}`}
-          >
-            Home
+    <>
+      <header className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}>
+        <div className="container navbar__inner">
+          <Link to="/" className="navbar__logo" onClick={close}>
+            <img src={`${import.meta.env.BASE_URL}images/logo.png`} alt="GurukulamX" height="36" />
           </Link>
-          {NAV_LINKS.map(({ label, href }) => (
-            <a key={label} href={getHref(href)} className="navbar__link">
-              {label}
-            </a>
-          ))}
-        </nav>
 
-        <div className="navbar__actions">
-          <a href={getHref('#pricing')} className="btn btn--ghost btn--sm">Sign in</a>
-          <a href={getHref('#contact')} className="btn btn--primary btn--sm">Get Started</a>
+          <nav className="navbar__links" aria-label="Main navigation">
+            <Link
+              to="/"
+              className={`navbar__link ${isHome ? 'navbar__link--active' : ''}`}
+            >
+              Home
+            </Link>
+            {NAV_LINKS.map(({ label, href }) => (
+              <a key={label} href={getHref(href)} className="navbar__link">
+                {label}
+              </a>
+            ))}
+          </nav>
+
+          <div className="navbar__actions">
+            <a href={getHref('#pricing')} className="btn btn--ghost btn--sm">Sign in</a>
+            <a href={getHref('#contact')} className="btn btn--primary btn--sm">Get Started</a>
+          </div>
+
+          <button
+            className={`navbar__burger ${menuOpen ? 'open' : ''}`}
+            onClick={() => setMenuOpen(v => !v)}
+            aria-label="Toggle menu"
+            aria-expanded={menuOpen}
+          >
+            <span /><span /><span />
+          </button>
         </div>
+      </header>
 
-        <button
-          className={`navbar__burger ${menuOpen ? 'open' : ''}`}
-          onClick={() => setMenuOpen(v => !v)}
-          aria-label="Toggle menu"
-          aria-expanded={menuOpen}
-        >
-          <span /><span /><span />
-        </button>
-      </div>
-
-      {/* Mobile drawer */}
+      {/* Mobile drawer — sibling of header so position:fixed is viewport-relative on iOS Safari */}
       <div className={`navbar__drawer ${menuOpen ? 'navbar__drawer--open' : ''}`}>
         <div className="navbar__drawer-inner">
           <img src={`${import.meta.env.BASE_URL}images/logo.png`} alt="GurukulamX" height="32" className="navbar__drawer-logo" />
@@ -75,6 +77,6 @@ export default function Navbar() {
           </a>
         </div>
       </div>
-    </header>
+    </>
   )
 }
